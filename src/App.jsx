@@ -23,17 +23,31 @@ export default function App() {
   )
   const [prompt, setPrompt] = useState({})
 
-  const generatePrompt = () => {
-    const newPrompt = {}
-    for (const key of Object.keys(CATEGORIES)) {
-      if (active[key]) {
-        const list = CATEGORIES[key]
-        const random = list[Math.floor(Math.random() * list.length)]
-        newPrompt[key] = random
-      }
+  const generatePrompt = async () => {
+  const newPrompt = {}
+
+  // Loop through categories
+  for (const key of Object.keys(CATEGORIES)) {
+    if (active[key]) {
+      const list = CATEGORIES[key]
+      const random = list[Math.floor(Math.random() * list.length)]
+      newPrompt[key] = random
     }
-    setPrompt(newPrompt)
   }
+
+  // 🔄 Inject dynamic subject from the API (replaces Subject)
+  try {
+    const res = await fetch('/api/random-subject')
+    const data = await res.json()
+    if (data?.type && data?.value) {
+      newPrompt[data.type] = data.value  // example: Animal: "Sloth"
+    }
+  } catch (err) {
+    console.error('Failed to fetch dynamic subject:', err)
+  }
+
+  setPrompt(newPrompt)
+}
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen p-4 bg-repeat" style={{ backgroundImage: "url('/bg/sketch.png')" }}>
