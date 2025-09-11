@@ -1,33 +1,53 @@
-document.getElementById('animalBtn').addEventListener('click', () => fetchPrompt('animal'));
-document.getElementById('mediumBtn').addEventListener('click', () => fetchPrompt('medium'));
-document.getElementById('genreBtn').addEventListener('click', () => fetchPrompt('genre'));
-document.getElementById('characterBtn').addEventListener('click', () => fetchPrompt('character'));
-document.getElementById('copyPrompt').addEventListener('click', copyPrompt);
-document.getElementById('searchPrompt').addEventListener('click', searchPrompt);
+// src/main.js
 
-let currentPrompt = {};
-
-async function fetchPrompt(category) {
-  const res = await fetch('/api/generate');
-  const data = await res.json();
-  document.getElementById(category + 'Result').textContent = data[category];
-  currentPrompt[category] = data[category];
-  buildFinalPrompt();
+// utility to update one category display
+function setResult(category, value) {
+  document.getElementById(category + "Result").textContent = value;
 }
 
-function buildFinalPrompt() {
-  const { animal, medium, genre, character } = currentPrompt;
+function buildFinalPrompt(state) {
+  const { animal, medium, genre, character } = state;
   if (animal && medium && genre && character) {
-    const prompt = `Draw a ${genre} piece in ${medium} featuring ${character} with a spirit of a ${animal}.`;
-    document.getElementById('finalPrompt').textContent = prompt;
+    return `Draw a ${genre} scene in ${medium} medium featuring ${character}, inspired by ${animal}.`;
+  }
+  return "";
+}
+
+async function handleGenerate(category, state) {
+  try {
+    const resp = await fetch(`/api/generate?category=${category}`);
+    const data = await resp.json();
+    if (data.prompt) {
+      state[category] = data.prompt;
+      setResult(category, data.prompt);
+      const final = buildFinalPrompt(state);
+      document.getElementById("finalPrompt").textContent = final;
+    } else {
+      setResult(category, "No prompt returned");
+    }
+  } catch (err) {
+    console.error("Error fetching prompt:", err);
+    setResult(category, "Error generating");
   }
 }
 
-function copyPrompt() {
-  navigator.clipboard.writeText(document.getElementById('finalPrompt').textContent);
-}
+window.addEventListener('DOMContentLoaded', () => {
+  const state = {};
+  document.getElementById("animalBtn").addEventListener("click", () => handleGenerate("animal", state));
+  document.getElementById("mediumBtn").addEventListener("click", () => handleGenerate("medium", state));
+  document.getElementById("genreBtn").addEventListener("click", () => handleGenerate("genre", state));
+  document.getElementById("characterBtn").addEventListener("click", () => handleGenerate("character", state));
 
-function searchPrompt() {
-  const text = document.getElementById('finalPrompt').textContent;
-  window.open(`https://www.google.com/search?q=${encodeURIComponent(text)} reference`, '_blank');
-}
+  document.getElementById("copyPrompt").addEventListener("click", () => {
+    const text = document.getElementById("finalPrompt").textContent;
+    navigator.clipboard.writeText(text);
+    alert("Prompt copied!");
+  });
+
+  document.getElementById("searchPrompt").addEventListener("click", () => {
+    const text = document.getElementById("finalPrompt").textContent;
+    if (text) {
+      window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(text)}`, "_blank");
+    }
+  });
+});
