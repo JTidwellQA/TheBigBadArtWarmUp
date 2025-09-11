@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/generate-slot.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
-}
