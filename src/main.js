@@ -1,6 +1,10 @@
-// src/main.js
+const state = {
+  animal: null,
+  medium: null,
+  genre: null,
+  character: null
+};
 
-// utility to update one category display
 function setResult(category, value) {
   document.getElementById(category + "Result").textContent = value;
 }
@@ -13,7 +17,7 @@ function buildFinalPrompt(state) {
   return "";
 }
 
-async function handleGenerate(category, state) {
+async function handleGenerate(category) {
   try {
     const resp = await fetch(`/api/generate?category=${category}`);
     const data = await resp.json();
@@ -32,11 +36,10 @@ async function handleGenerate(category, state) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  const state = {};
-  document.getElementById("animalBtn").addEventListener("click", () => handleGenerate("animal", state));
-  document.getElementById("mediumBtn").addEventListener("click", () => handleGenerate("medium", state));
-  document.getElementById("genreBtn").addEventListener("click", () => handleGenerate("genre", state));
-  document.getElementById("characterBtn").addEventListener("click", () => handleGenerate("character", state));
+  document.getElementById("animalBtn").addEventListener("click", () => handleGenerate("animal"));
+  document.getElementById("mediumBtn").addEventListener("click", () => handleGenerate("medium"));
+  document.getElementById("genreBtn").addEventListener("click", () => handleGenerate("genre"));
+  document.getElementById("characterBtn").addEventListener("click", () => handleGenerate("character"));
 
   document.getElementById("copyPrompt").addEventListener("click", () => {
     const text = document.getElementById("finalPrompt").textContent;
@@ -44,10 +47,16 @@ window.addEventListener('DOMContentLoaded', () => {
     alert("Prompt copied!");
   });
 
-  document.getElementById("searchPrompt").addEventListener("click", () => {
-    const text = document.getElementById("finalPrompt").textContent;
-    if (text) {
-      window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(text)}`, "_blank");
-    }
+  // Add individual search buttons for each category
+  document.querySelectorAll(".searchBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const type = btn.dataset.type;
+      const value = state[type];
+      if (value) {
+        window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(value)}`, "_blank");
+      } else {
+        alert(`Please generate a ${type} first.`);
+      }
+    });
   });
 });
