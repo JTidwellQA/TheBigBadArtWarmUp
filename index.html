@@ -1,49 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>The Big Bad Art Warm-Up</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body>
-    <h1>The Big Bad Art Warm-Up</h1>
+<body>
+  <h1>The Big Bad Art Warm-Up</h1>
 
-    <div class="category">
-      <h2>Animal</h2>
-      <div id="animal-display">(click generate)</div>
-      <button id="animal-generate">Generate</button>
-      <button onclick="addToPrompt(document.getElementById('animal-display').textContent)">Add to Prompt</button>
-    </div>
+  <div class="category">
+    <h2>Animal</h2>
+    <button id="animal-generate">Generate Animal</button>
+    <div id="animal-display">Your animal will appear here</div>
+    <button onclick="addToPrompt(document.getElementById('animal-display').textContent)">Add to Prompt</button>
+  </div>
 
-    <div class="category">
-      <h2>Medium</h2>
-      <div id="medium-display">(click generate)</div>
-      <button id="medium-generate">Generate</button>
-      <button onclick="addToPrompt(document.getElementById('medium-display').textContent)">Add to Prompt</button>
-    </div>
+  <div class="category">
+    <h2>Medium</h2>
+    <button id="medium-generate">Generate Medium</button>
+    <div id="medium-display">Your medium will appear here</div>
+    <button onclick="addToPrompt(document.getElementById('medium-display').textContent)">Add to Prompt</button>
+  </div>
 
-    <div class="category">
-      <h2>Genre</h2>
-      <div id="genre-display">(click generate)</div>
-      <button id="genre-generate">Generate</button>
-      <button onclick="addToPrompt(document.getElementById('genre-display').textContent)">Add to Prompt</button>
-    </div>
+  <div class="category">
+    <h2>Genre</h2>
+    <button id="genre-generate">Generate Genre</button>
+    <div id="genre-display">Your genre will appear here</div>
+    <button onclick="addToPrompt(document.getElementById('genre-display').textContent)">Add to Prompt</button>
+  </div>
 
-    <div class="category">
-      <h2>Character</h2>
-      <div id="character-display">(click generate)</div>
-      <button id="character-generate">Generate</button>
-      <button onclick="addToPrompt(document.getElementById('character-display').textContent)">Add to Prompt</button>
-    </div>
+  <div class="category">
+    <h2>Character</h2>
+    <button id="character-generate">Generate Character</button>
+    <div id="character-display">Your character will appear here</div>
+    <button onclick="addToPrompt(document.getElementById('character-display').textContent)">Add to Prompt</button>
+  </div>
 
-    <hr />
+  <div id="promptOutput">Your prompt will appear here...</div>
+  <button onclick="copyPrompt()">Copy Prompt</button>
 
-    <h2>Your Final Prompt:</h2>
-    <div id="promptOutput">Your prompt will appear here...</div>
-    <button onclick="copyPrompt()">Copy Prompt</button>
-    <button onclick="searchReference(promptOutput.textContent)">Search Reference</button>
-
-    <script type="module" src="/src/main.js"></script>
-  </body>
-</html>
+  <script type="module" src="/src/main.js"></script>
+</body>
