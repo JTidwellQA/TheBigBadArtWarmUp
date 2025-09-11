@@ -1,1 +1,0 @@
-// Placeholder for PWA service worker
