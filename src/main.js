@@ -43,7 +43,17 @@ async function handleGenerate(category) {
 }
 
 async function handleGenerateAll() {
-  await Promise.all(categories.map(cat => handleGenerate(cat)));
+  await Promise.all(categories.map(async (cat) => {
+    const resp = await fetch(`/api/generate?category=${cat}`);
+    const data = await resp.json();
+    if (data.prompt) {
+      state[cat] = data.prompt;
+      setResult(cat, data.prompt);
+    } else {
+      setResult(cat, "No prompt returned");
+    }
+  }));
+  buildFinalPrompt();
 }
 
 function clearAll() {
