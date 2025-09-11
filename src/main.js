@@ -16,20 +16,21 @@ function setResult(category, value) {
 }
 
 function buildFinalPrompt(state) {
-  const {
-    animal, medium, genre, character,
-    lighting, vibe, emotion, color, camera, franchiseCharacter
-  } = state;
+  const parts = [];
 
-  // Only generate final prompt if all categories are selected
-  if (animal && medium && genre && character && lighting && vibe && emotion && color && camera && franchiseCharacter) {
-    return `🎨 Draw a ${emotion} ${genre} scene using ${medium}, featuring a ${character} and ${franchiseCharacter}, inspired by a ${animal}. 
-Lighting: ${lighting}, Vibe: ${vibe}, Color Palette: ${color}, Camera Style: ${camera}.`;
+  for (const [category, value] of Object.entries(state)) {
+    const checkbox = document.getElementById(`checkbox-${category}`);
+    if (checkbox?.checked && value) {
+      parts.push(`${capitalize(category)}: ${value}`);
+    }
   }
 
-  return "Complete all prompts to generate a full art challenge.";
+  return parts.join('\n');
 }
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 async function handleGenerate(category) {
   try {
     const resp = await fetch(`/api/generate?category=${category}`);
