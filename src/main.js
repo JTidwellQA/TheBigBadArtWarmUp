@@ -2,7 +2,13 @@ const state = {
   animal: null,
   medium: null,
   genre: null,
-  character: null
+  character: null,
+  lighting: null,
+  vibe: null,
+  emotion: null,
+  color: null,
+  camera: null,
+  franchiseCharacter: null
 };
 
 function setResult(category, value) {
@@ -10,11 +16,18 @@ function setResult(category, value) {
 }
 
 function buildFinalPrompt(state) {
-  const { animal, medium, genre, character } = state;
-  if (animal && medium && genre && character) {
-    return `Draw a ${genre} scene in ${medium} medium featuring ${character}, inspired by ${animal}.`;
+  const {
+    animal, medium, genre, character,
+    lighting, vibe, emotion, color, camera, franchiseCharacter
+  } = state;
+
+  // Only generate final prompt if all categories are selected
+  if (animal && medium && genre && character && lighting && vibe && emotion && color && camera && franchiseCharacter) {
+    return `🎨 Draw a ${emotion} ${genre} scene using ${medium}, featuring a ${character} and ${franchiseCharacter}, inspired by a ${animal}. 
+Lighting: ${lighting}, Vibe: ${vibe}, Color Palette: ${color}, Camera Style: ${camera}.`;
   }
-  return "";
+
+  return "Complete all prompts to generate a full art challenge.";
 }
 
 async function handleGenerate(category) {
@@ -36,10 +49,14 @@ async function handleGenerate(category) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById("animalBtn").addEventListener("click", () => handleGenerate("animal"));
-  document.getElementById("mediumBtn").addEventListener("click", () => handleGenerate("medium"));
-  document.getElementById("genreBtn").addEventListener("click", () => handleGenerate("genre"));
-  document.getElementById("characterBtn").addEventListener("click", () => handleGenerate("character"));
+  // Add generate button listeners for all categories
+  const categories = Object.keys(state);
+  categories.forEach((cat) => {
+    const btn = document.getElementById(cat + "Btn");
+    if (btn) {
+      btn.addEventListener("click", () => handleGenerate(cat));
+    }
+  });
 
   document.getElementById("copyPrompt").addEventListener("click", () => {
     const text = document.getElementById("finalPrompt").textContent;
@@ -47,7 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
     alert("Prompt copied!");
   });
 
-  // Add individual search buttons for each category
+  // Add search buttons for each category
   document.querySelectorAll(".searchBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const type = btn.dataset.type;
