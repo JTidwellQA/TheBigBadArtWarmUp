@@ -16,16 +16,15 @@ function setResult(category, value) {
 }
 
 function buildFinalPrompt(state) {
-  const parts = [];
-  for (const [category, value] of Object.entries(state)) {
-    const checkbox = document.getElementById(`checkbox-${category}`);
-    if (checkbox && checkbox.checked && value) {
-      // Capitalize the category name nicely
-      const label = category.charAt(0).toUpperCase() + category.slice(1);
-      parts.push(`${label}: ${value}`);
+  const result = [];
+
+  for (const [key, value] of Object.entries(state)) {
+    if (value) {
+      result.push(`${key}: ${value}`);
     }
   }
-  return parts.join(" • ");  // using bullets or dots to separate
+
+  return result.join("\n");
 }
 
 async function handleGenerate(category) {
