@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Big Bad Art Warm-Up</title>
+  </head>
+  <body>
+    <h1>The Big Bad Art Warm-Up</h1>
+
+    <div>
+      <button id="animal-generate">Generate Animal</button>
+      <span id="animal-display"></span>
+      <button onclick="addToPrompt(document.getElementById('animal-display').textContent)">Add</button>
+    </div>
+
+    <div>
+      <button id="medium-generate">Generate Medium</button>
+      <span id="medium-display"></span>
+      <button onclick="addToPrompt(document.getElementById('medium-display').textContent)">Add</button>
+    </div>
+
+    <div>
+      <button id="genre-generate">Generate Genre</button>
+      <span id="genre-display"></span>
+      <button onclick="addToPrompt(document.getElementById('genre-display').textContent)">Add</button>
+    </div>
+
+    <div>
+      <button id="character-generate">Generate Character</button>
+      <span id="character-display"></span>
+      <button onclick="addToPrompt(document.getElementById('character-display').textContent)">Add</button>
+    </div>
+
+    <h2>Final Prompt</h2>
+    <div id="promptOutput">Your prompt will appear here...</div>
+    <button onclick="copyPrompt()">Copy Prompt</button>
+    <button onclick="searchReference(promptOutput.textContent)">Search Image Reference</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
