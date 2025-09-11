@@ -1,5 +1,5 @@
 // src/main.js
-import './style.css';
+//import './style.css';
 
 const categories = ['animal', 'medium', 'genre', 'character'];
 
