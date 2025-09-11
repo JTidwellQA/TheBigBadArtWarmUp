@@ -19,7 +19,8 @@ function buildFinalPrompt(state) {
   const result = [];
 
   for (const [key, value] of Object.entries(state)) {
-    if (value) {
+    const checkbox = document.getElementById(`${key}Check`);
+    if (value && checkbox?.checked) {
       result.push(`${key}: ${value}`);
     }
   }
