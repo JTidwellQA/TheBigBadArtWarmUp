@@ -50,10 +50,11 @@ export default function handler(req, res) {
   const options = categories[category];
 
   if (!options || options.length === 0) {
-    res.status(400).json({ error: "Invalid category or empty list." });
+    res.status(200).json({ prompt: result }); // ✅ match what frontend expects
     return;
   }
 
   const random = options[Math.floor(Math.random() * options.length)];
   res.status(200).json({ result: random });
 }
+
