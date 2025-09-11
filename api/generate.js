@@ -1,14 +1,17 @@
 export default function handler(req, res) {
   const prompts = {
-    animal: ["lion", "wolf", "octopus", "eagle", "tiger"],
-    medium: ["charcoal", "oil paint", "digital", "ink", "watercolor"],
-    genre: ["sci-fi", "fantasy", "noir", "cyberpunk", "surrealism"],
-    character: ["a wise old warrior", "a lost child", "a mysterious traveler", "a robot with emotions", "a beast with a heart"]
+    animal: ["lion", "wolf", "owl", "fox", "bear"],
+    medium: ["ink", "watercolor", "digital", "charcoal", "pencil"],
+    genre: ["fantasy", "horror", "sci‑fi", "noir", "surreal"],
+    character: ["knight", "wizard", "robot", "thief", "dragon rider"]
   };
-  const result = {};
-  for (const key in prompts) {
-    const items = prompts[key];
-    result[key] = items[Math.floor(Math.random() * items.length)];
+
+  const category = req.query.category;
+  if (!category || !prompts[category]) {
+    res.status(400).json({ error: "Invalid category" });
+    return;
   }
-  res.status(200).json(result);
+
+  const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
+  res.status(200).json({ prompt: rand });
 }
