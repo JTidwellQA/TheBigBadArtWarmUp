@@ -1,31 +1,28 @@
-const state = {
-  animal: null,
-  medium: null,
-  genre: null,
-  character: null,
-  lighting: null,
-  vibe: null,
-  emotion: null,
-  color: null,
-  camera: null,
-  franchiseCharacter: null
-};
+const categories = [
+  "animal", "medium", "genre", "character", "lighting",
+  "vibe", "emotion", "color", "camera", "franchiseCharacter"
+];
+
+const state = {};
+categories.forEach(cat => state[cat] = null);
 
 function setResult(category, value) {
   document.getElementById(category + "Result").textContent = value;
 }
 
-function buildFinalPrompt(state) {
-  const result = [];
+function buildFinalPrompt() {
+  const selected = categories.filter(cat => {
+    const checkbox = document.getElementById(cat + "Check");
+    return checkbox && checkbox.checked && state[cat];
+  });
 
-  for (const [key, value] of Object.entries(state)) {
-    const checkbox = document.getElementById(`${key}Check`);
-    if (value && checkbox?.checked) {
-      result.push(`${key}: ${value}`);
-    }
-  }
+  const lines = selected.map(cat => `${capitalize(cat)}: ${state[cat]}`);
+  document.getElementById("finalPrompt").textContent = lines.join("\n");
+}
 
-  return result.join("\n");
+function capitalize(word) {
+  return word.replace(/([A-Z])/g, ' $1') // Add space for camelCase
+             .replace(/^./, str => str.toUpperCase());
 }
 
 async function handleGenerate(category) {
@@ -38,40 +35,48 @@ async function handleGenerate(category) {
     } else {
       setResult(category, "No prompt returned");
     }
+    buildFinalPrompt();
   } catch (err) {
     console.error("Error fetching prompt:", err);
     setResult(category, "Error generating");
   }
-  // After generation, update final prompt
-  const final = buildFinalPrompt(state);
-  document.getElementById("finalPrompt").textContent = final;
+}
+
+async function handleGenerateAll() {
+  await Promise.all(categories.map(cat => handleGenerate(cat)));
+}
+
+function clearAll() {
+  categories.forEach(cat => {
+    state[cat] = null;
+    setResult(cat, "‑");
+  });
+  document.getElementById("finalPrompt").textContent = "Your final prompt will appear here.";
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  const categories = Object.keys(state);
-  categories.forEach((cat) => {
+  // Button listeners
+  categories.forEach(cat => {
     const btn = document.getElementById(cat + "Btn");
     if (btn) {
       btn.addEventListener("click", () => handleGenerate(cat));
     }
+
+    const checkbox = document.getElementById(cat + "Check");
+    if (checkbox) {
+      checkbox.addEventListener("change", buildFinalPrompt);
+    }
   });
 
-  // Add listeners for checkbox toggles
-  document.querySelectorAll("input[type=checkbox].include").forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      const final = buildFinalPrompt(state);
-      document.getElementById("finalPrompt").textContent = final;
-    });
-  });
+  document.getElementById("generateAllBtn").addEventListener("click", handleGenerateAll);
+  document.getElementById("clearAllBtn").addEventListener("click", clearAll);
 
-  // Copy prompt
   document.getElementById("copyPrompt").addEventListener("click", () => {
     const text = document.getElementById("finalPrompt").textContent;
     navigator.clipboard.writeText(text);
     alert("Prompt copied!");
   });
 
-  // Search individual category references
   document.querySelectorAll(".searchBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const type = btn.dataset.type;
@@ -83,7 +88,4 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Optionally, initialize final prompt (empty or with any defaults)
-  document.getElementById("finalPrompt").textContent = buildFinalPrompt(state);
 });
