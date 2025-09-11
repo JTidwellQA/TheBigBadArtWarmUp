@@ -1,1 +1,0 @@
-export const Button = (props) => <button {...props} className='px-3 py-1 border rounded'>{props.children}</button>;
