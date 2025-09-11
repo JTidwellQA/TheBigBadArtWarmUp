@@ -17,20 +17,17 @@ function setResult(category, value) {
 
 function buildFinalPrompt(state) {
   const parts = [];
-
   for (const [category, value] of Object.entries(state)) {
     const checkbox = document.getElementById(`checkbox-${category}`);
-    if (checkbox?.checked && value) {
-      parts.push(`${capitalize(category)}: ${value}`);
+    if (checkbox && checkbox.checked && value) {
+      // Capitalize the category name nicely
+      const label = category.charAt(0).toUpperCase() + category.slice(1);
+      parts.push(`${label}: ${value}`);
     }
   }
-
-  return parts.join('\n');
+  return parts.join(" • ");  // using bullets or dots to separate
 }
 
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 async function handleGenerate(category) {
   try {
     const resp = await fetch(`/api/generate?category=${category}`);
@@ -38,8 +35,6 @@ async function handleGenerate(category) {
     if (data.prompt) {
       state[category] = data.prompt;
       setResult(category, data.prompt);
-      const final = buildFinalPrompt(state);
-      document.getElementById("finalPrompt").textContent = final;
     } else {
       setResult(category, "No prompt returned");
     }
@@ -47,10 +42,12 @@ async function handleGenerate(category) {
     console.error("Error fetching prompt:", err);
     setResult(category, "Error generating");
   }
+  // After generation, update final prompt
+  const final = buildFinalPrompt(state);
+  document.getElementById("finalPrompt").textContent = final;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Add generate button listeners for all categories
   const categories = Object.keys(state);
   categories.forEach((cat) => {
     const btn = document.getElementById(cat + "Btn");
@@ -59,13 +56,22 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Add listeners for checkbox toggles
+  document.querySelectorAll("input[type=checkbox].include").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      const final = buildFinalPrompt(state);
+      document.getElementById("finalPrompt").textContent = final;
+    });
+  });
+
+  // Copy prompt
   document.getElementById("copyPrompt").addEventListener("click", () => {
     const text = document.getElementById("finalPrompt").textContent;
     navigator.clipboard.writeText(text);
     alert("Prompt copied!");
   });
 
-  // Add search buttons for each category
+  // Search individual category references
   document.querySelectorAll(".searchBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const type = btn.dataset.type;
@@ -77,4 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Optionally, initialize final prompt (empty or with any defaults)
+  document.getElementById("finalPrompt").textContent = buildFinalPrompt(state);
 });
