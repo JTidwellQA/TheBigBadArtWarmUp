@@ -1,68 +1,74 @@
-import React, { useState, useEffect } from 'react';
-import './index.css';
+// src/App.jsx
+import React, { useState } from "react";
+import "./index.css";
 
-const textures = [
-  '/textures/sketch.jpg',
-  '/textures/grid.jpg',
-  '/textures/canvas.jpg',
-  '/textures/dotpaper.jpg',
-  '/textures/oldpaper.jpg'
+const categories = [
+  "Creature", "Character", "Pose", "Animal", "Environment", "Object", "Machine", "Hybrid"
 ];
 
-function App() {
-  const [prompt, setPrompt] = useState(null);
+export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState("Creature");
+  const [generatedPrompt, setGeneratedPrompt] = useState("");
   const [loading, setLoading] = useState(false);
-  const [bg, setBg] = useState('');
 
-  useEffect(() => {
-    const randomBg = textures[Math.floor(Math.random() * textures.length)];
-    setBg(randomBg);
-  }, []);
-
-  const getPrompt = async () => {
+  const fetchPrompt = async () => {
     setLoading(true);
+    setGeneratedPrompt("");
     try {
-      const res = await fetch('/api/random-subject');
-      const data = await res.json();
-      setPrompt(data);
+      const response = await fetch(`/api/generate-prompt?category=${encodeURIComponent(selectedCategory)}`);
+      const data = await response.json();
+      setGeneratedPrompt(data.result);
     } catch (err) {
-      setPrompt({ category: 'Error', result: 'Could not fetch prompt.' });
+      setGeneratedPrompt("Error fetching prompt.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
+  };
+
+  const getGoogleImageLink = (query) => {
+    return `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`;
   };
 
   return (
-    <div
-      className="app"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'repeat',
-        minHeight: '100vh',
-        padding: '2rem'
-      }}
-    >
-      <h1 className="title">🖌️ The Big Bad Art Warm-Up</h1>
-      <button className="generate-btn" onClick={getPrompt} disabled={loading}>
-        {loading ? 'Loading...' : '🎲 Generate Prompt'}
-      </button>
+    <div className="app-container">
+      <h1 className="title">🎨 The Big Bad Art Warm-Up</h1>
 
-      {prompt && (
-        <div className="prompt-box">
-          <h2>Category: {prompt.category}</h2>
-          <p><strong>Prompt:</strong> {prompt.result}</p>
-          <a
-            className="reference-link"
-            href={`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(prompt.result)}`}
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="content-grid">
+        <div className="left-panel">
+          <label htmlFor="category-select">Choose a Category:</label>
+          <select
+            id="category-select"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
           >
-            🔍 Click for Reference
-          </a>
+            {categories.map((cat, idx) => (
+              <option key={idx} value={cat}>{cat}</option>
+            ))}
+          </select>
+
+          <button className="generate-btn" onClick={fetchPrompt} disabled={loading}>
+            {loading ? "Generating..." : "🎲 Generate Prompt"}
+          </button>
+
+          {generatedPrompt && (
+            <a
+              className="reference-link"
+              href={getGoogleImageLink(generatedPrompt)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🔍 Click for Reference
+            </a>
+          )}
         </div>
-      )}
+
+        <div className="right-panel">
+          <h2>🖌️ Prompt:</h2>
+          <div className="prompt-box">
+            {generatedPrompt || (loading ? "Fetching..." : "Your prompt will appear here.")}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
