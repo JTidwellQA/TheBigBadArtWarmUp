@@ -1,103 +1,43 @@
-/* index.css */
-
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
-  background-color: #f4f3ef;
-  background-image: url('https://www.transparenttextures.com/patterns/sketch.png');
-  background-repeat: repeat;
-  background-size: auto;
-  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdf6e3;
 }
 
-h1 {
+.app {
   text-align: center;
-  margin-top: 20px;
-  font-size: 2rem;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 2rem;
-  gap: 2rem;
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
-table {
-  border-collapse: collapse;
-  width: 300px;
-  background-color: #fffdf5;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-}
-
-td, th {
-  padding: 0.75rem;
-  border-bottom: 1px solid #ddd;
-}
-
-button {
-  background-color: #222;
+.generate-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: #333;
   color: #fff;
-  padding: 10px 15px;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 10px;
-  font-weight: bold;
-  border-radius: 4px;
 }
 
-button:hover {
-  background-color: #444;
+.generate-btn:hover {
+  background: #555;
 }
 
-.output-box {
-  max-width: 350px;
-  background-color: #fefefe;
-  padding: 1rem;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-a {
+.prompt-box {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem 2rem;
+  border-radius: 12px;
   display: inline-block;
-  margin-top: 0.5rem;
-  color: #0077cc;
-  text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-.generate-button {
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin: 20px 0;
-  cursor: pointer;
-}
-
-.prompt-table {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.prompt-row {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.prompt-category {
+.reference-link {
+  margin-top: 1rem;
+  display: block;
+  color: #1a73e8;
   font-weight: bold;
 }
