@@ -1,1 +1,31 @@
-body { margin: 0; font-family: sans-serif; background-color: #fafafa; }
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Big Bad Art Warm-Up</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>The Big Bad Art Warm-Up</h1>
+    <div class="container">
+      <!-- Left Side: Prompt Selections -->
+      <div class="left-table">
+        <table id="promptTable"></table>
+      </div>
+
+      <!-- Right Side: Prompt Summary -->
+      <div class="right-summary">
+        <h2>Prompt Summary</h2>
+        <div id="promptOutput" class="prompt-box"></div>
+        <button onclick="generatePrompt()">Regenerate</button>
+        <button onclick="copyPrompt()">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
