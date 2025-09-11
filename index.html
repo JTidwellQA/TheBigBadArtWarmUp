@@ -20,47 +20,47 @@
     <button id="colorBtn">Generate Color</button>
     <button id="cameraBtn">Generate Camera</button>
     <button id="franchiseCharacterBtn">Generate Franchise Character</button>
-    <button id="generateAllBtn">Generate All</button>
+    <button id="generateAllBtn">🎲 Generate All</button>
   </div>
 
   <div id="results">
-    <p><input type="checkbox" class="include" data-type="animal" checked> <strong>Animal:</strong> <span id="animalResult">‑</span>
+    <p><input type="checkbox" class="include" id="animalCheck" checked> <strong>Animal:</strong> <span id="animalResult">‑</span>
       <button class="searchBtn" data-type="animal">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="medium" checked> <strong>Medium:</strong> <span id="mediumResult">‑</span>
+    <p><input type="checkbox" class="include" id="mediumCheck" checked> <strong>Medium:</strong> <span id="mediumResult">‑</span>
       <button class="searchBtn" data-type="medium">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="genre" checked> <strong>Genre:</strong> <span id="genreResult">‑</span>
+    <p><input type="checkbox" class="include" id="genreCheck" checked> <strong>Genre:</strong> <span id="genreResult">‑</span>
       <button class="searchBtn" data-type="genre">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="character" checked> <strong>Character:</strong> <span id="characterResult">‑</span>
+    <p><input type="checkbox" class="include" id="characterCheck" checked> <strong>Character:</strong> <span id="characterResult">‑</span>
       <button class="searchBtn" data-type="character">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="lighting" checked> <strong>Lighting:</strong> <span id="lightingResult">‑</span>
+    <p><input type="checkbox" class="include" id="lightingCheck" checked> <strong>Lighting:</strong> <span id="lightingResult">‑</span>
       <button class="searchBtn" data-type="lighting">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="vibe" checked> <strong>Vibe:</strong> <span id="vibeResult">‑</span>
+    <p><input type="checkbox" class="include" id="vibeCheck" checked> <strong>Vibe:</strong> <span id="vibeResult">‑</span>
       <button class="searchBtn" data-type="vibe">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="emotion" checked> <strong>Emotion:</strong> <span id="emotionResult">‑</span>
+    <p><input type="checkbox" class="include" id="emotionCheck" checked> <strong>Emotion:</strong> <span id="emotionResult">‑</span>
       <button class="searchBtn" data-type="emotion">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="color" checked> <strong>Color:</strong> <span id="colorResult">‑</span>
+    <p><input type="checkbox" class="include" id="colorCheck" checked> <strong>Color:</strong> <span id="colorResult">‑</span>
       <button class="searchBtn" data-type="color">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="camera" checked> <strong>Camera:</strong> <span id="cameraResult">‑</span>
+    <p><input type="checkbox" class="include" id="cameraCheck" checked> <strong>Camera:</strong> <span id="cameraResult">‑</span>
       <button class="searchBtn" data-type="camera">🔍</button>
     </p>
-    <p><input type="checkbox" class="include" data-type="franchiseCharacter" checked> <strong>Franchise Character:</strong> <span id="franchiseCharacterResult">‑</span>
+    <p><input type="checkbox" class="include" id="franchiseCharacterCheck" checked> <strong>Franchise Character:</strong> <span id="franchiseCharacterResult">‑</span>
       <button class="searchBtn" data-type="franchiseCharacter">🔍</button>
     </p>
   </div>
 
   <div>
-    <button id="copyPrompt">Copy Prompt</button>
+    <button id="copyPrompt">📋 Copy Prompt</button>
   </div>
 
-  <p id="finalPrompt">Your final prompt will appear here.</p>
+  <pre id="finalPrompt">Your final prompt will appear here.</pre>
 
   <script type="module" src="/src/main.js"></script>
 </body>
