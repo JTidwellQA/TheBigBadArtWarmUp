@@ -19,11 +19,11 @@ const CATEGORIES = {
 }
 
 const BACKGROUNDS = [
-  '/bg/sketch.png',
-  '/bg/canvas.png',
-  '/bg/dot.png',
-  '/bg/grid.png',
-  '/bg/graph.png'
+  '/public/bg/sketch.png',
+  '/public/bg/canvas.png',
+  '/public/bg/dot.png',
+  '/public/bg/grid.png',
+  '/public/bg/graph.png'
 ]
 
 export default function App() {
