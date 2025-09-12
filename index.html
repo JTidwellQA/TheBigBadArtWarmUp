@@ -1,123 +1,100 @@
-const categories = [
-  "animal", "medium", "genre", "character", "creature", "environment", 
-  "lighting", "vibe", "emotion", "color", "camera", "franchiseCharacter"
-];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Big Bad Art Warm-Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <h1>The Big Bad Art Warm-Up</h1>
 
-const state = {};
-categories.forEach(cat => state[cat] = null);
+  <div class="button-group">
+    <button id="animalBtn">Generate Animal</button>
+    <button id="mediumBtn">Generate Medium</button>
+    <button id="genreBtn">Generate Genre</button>
+    <button id="characterBtn">Generate Character</button>
+    <button id="creatureBtn">Generate Creature</button>
+    <button id="environmentBtn">Generate Environment</button>
+    <button id="lightingBtn">Generate Lighting</button>
+    <button id="vibeBtn">Generate Vibe</button>
+    <button id="emotionBtn">Generate Emotion</button>
+    <button id="colorBtn">Generate Color</button>
+    <button id="cameraBtn">Generate Camera</button>
+    <button id="franchiseCharacterBtn">Generate Franchise Character</button>
+    <button id="generateAllBtn">🎲 Generate All</button>
+    <button id="clearAllBtn">🧹 Clear All</button>
+    <button id="toggleSelectAllBtn">Unselect All</button>
+  </div>
 
-function setResult(category, value) {
-  document.getElementById(category + "Result").textContent = value;
-}
+  <div id="results">
+    <p><input type="checkbox" class="include" id="animalCheck" checked> 
+      <strong>Animal:</strong> <span id="animalResult">-</span>
+      <button class="searchBtn" data-type="animal">🔍 Search for Reference</button>
+    </p>
 
-function buildFinalPrompt() {
-  const selected = categories.filter(cat => {
-    const checkbox = document.getElementById(cat + "Check");
-    return checkbox && checkbox.checked && state[cat];
-  });
+    <p><input type="checkbox" class="include" id="mediumCheck" checked> 
+      <strong>Medium:</strong> <span id="mediumResult">-</span>
+      <button class="searchBtn" data-type="medium">🔍 Search for Reference</button>
+    </p>
 
-  const lines = selected.map(cat => `${capitalize(cat)}: ${state[cat]}`);
-  document.getElementById("finalPrompt").textContent = lines.join("\n");
-}
+    <p><input type="checkbox" class="include" id="genreCheck" checked> 
+      <strong>Genre:</strong> <span id="genreResult">-</span>
+      <button class="searchBtn" data-type="genre">🔍 Search for Reference</button>
+    </p>
 
-function capitalize(word) {
-  return word.replace(/([A-Z])/g, ' $1')
-             .replace(/^./, str => str.toUpperCase());
-}
+    <p><input type="checkbox" class="include" id="characterCheck" checked> 
+      <strong>Character:</strong> <span id="characterResult">-</span>
+      <button class="searchBtn" data-type="character">🔍 Search for Reference</button>
+    </p>
 
-async function handleGenerate(category) {
-  try {
-    const resp = await fetch(`/api/generate?category=${category}`);
-    const data = await resp.json();
-    if (data.prompt) {
-      state[category] = data.prompt;
-      setResult(category, data.prompt);
-    } else {
-      setResult(category, "No prompt returned");
-    }
-    buildFinalPrompt();
-  } catch (err) {
-    console.error("Error fetching prompt:", err);
-    setResult(category, "Error generating");
-  }
-}
+    <p><input type="checkbox" class="include" id="creatureCheck" checked> 
+      <strong>Creature:</strong> <span id="creatureResult">-</span>
+      <button class="searchBtn" data-type="creature">🔍 Search for Reference</button>
+    </p>
 
-async function handleGenerateAll() {
-  await Promise.all(categories.map(async (cat) => {
-    const resp = await fetch(`/api/generate?category=${cat}`);
-    const data = await resp.json();
-    if (data.prompt) {
-      state[cat] = data.prompt;
-      setResult(cat, data.prompt);
-    } else {
-      setResult(cat, "No prompt returned");
-    }
-  }));
-  buildFinalPrompt();
-}
+    <p><input type="checkbox" class="include" id="environmentCheck" checked> 
+      <strong>Environment:</strong> <span id="environmentResult">-</span>
+      <button class="searchBtn" data-type="environment">🔍 Search for Reference</button>
+    </p>
 
-function clearAll() {
-  categories.forEach(cat => {
-    state[cat] = null;
-    setResult(cat, "-");
-    const checkbox = document.getElementById(cat + "Check");
-    if (checkbox) checkbox.checked = false;
-  });
-  document.getElementById("finalPrompt").textContent = "Your final prompt will appear here.";
-}
+    <p><input type="checkbox" class="include" id="lightingCheck" checked> 
+      <strong>Lighting:</strong> <span id="lightingResult">-</span>
+      <button class="searchBtn" data-type="lighting">🔍 Search for Reference</button>
+    </p>
 
-window.addEventListener('DOMContentLoaded', () => {
-  categories.forEach(cat => {
-    const btn = document.getElementById(cat + "Btn");
-    if (btn) {
-      btn.addEventListener("click", () => handleGenerate(cat));
-    }
+    <p><input type="checkbox" class="include" id="vibeCheck" checked> 
+      <strong>Vibe:</strong> <span id="vibeResult">-</span>
+      <button class="searchBtn" data-type="vibe">🔍 Search for Reference</button>
+    </p>
 
-    const checkbox = document.getElementById(cat + "Check");
-    if (checkbox) {
-      checkbox.addEventListener("change", buildFinalPrompt);
-    }
-  });
+    <p><input type="checkbox" class="include" id="emotionCheck" checked> 
+      <strong>Emotion:</strong> <span id="emotionResult">-</span>
+      <button class="searchBtn" data-type="emotion">🔍 Search for Reference</button>
+    </p>
 
-  let allSelected = true; // ✅ start true because all checkboxes start checked
+    <p><input type="checkbox" class="include" id="colorCheck" checked> 
+      <strong>Color:</strong> <span id="colorResult">-</span>
+      <button class="searchBtn" data-type="color">🔍 Search for Reference</button>
+    </p>
 
-  document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
-    allSelected = !allSelected;
+    <p><input type="checkbox" class="include" id="cameraCheck" checked> 
+      <strong>Camera:</strong> <span id="cameraResult">-</span>
+      <button class="searchBtn" data-type="camera">🔍 Search for Reference</button>
+    </p>
 
-    categories.forEach(cat => {
-      const checkbox = document.getElementById(cat + "Check");
-      if (checkbox) {
-        checkbox.checked = allSelected;
-      }
-    });
+    <p><input type="checkbox" class="include" id="franchiseCharacterCheck" checked> 
+      <strong>Franchise Character:</strong> <span id="franchiseCharacterResult">-</span>
+      <button class="searchBtn" data-type="franchiseCharacter">🔍 Search for Reference</button>
+    </p>
+  </div>
 
-    // Update button text
-    document.getElementById("toggleSelectAllBtn").textContent = allSelected ? "Unselect All" : "Select All";
+  <div>
+    <button id="copyPrompt">📋 Copy Prompt</button>
+  </div>
 
-    // Update final prompt immediately
-    buildFinalPrompt();
-  });
+  <pre id="finalPrompt">Your final prompt will appear here.</pre>
 
-  document.getElementById("generateAllBtn").addEventListener("click", handleGenerateAll);
-  document.getElementById("clearAllBtn").addEventListener("click", clearAll);
-
-  document.getElementById("copyPrompt").addEventListener("click", () => {
-    const text = document.getElementById("finalPrompt").textContent;
-    navigator.clipboard.writeText(text);
-    alert("Prompt copied!");
-  });
-
-  document.querySelectorAll(".searchBtn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const type = btn.dataset.type;
-      const value = state[type];
-      if (value) {
-        const label = capitalize(type);
-        const searchQuery = `${label}: ${value}`;
-        window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`, "_blank");
-      } else {
-        alert(`Please generate a ${type} first.`);
-      }
-    });
-  });
-});
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
