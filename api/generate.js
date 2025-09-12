@@ -222,7 +222,7 @@ environment: [
   "Blood Serpent", "Vampire Bat", "Blood Wraith", "Crimson Drake", "Bone Serpent", "Graveyard Horror", "Ghast", "Shade", "Crypt Guardian", "Night Terror",
   "Celestial Serpent", "Heavenly Stag", "Starlight Phoenix", "Radiant Lion", "Solar Serpent", "Galactic Drake", "Comet Spirit", "Eclipse Serpent", "Nebula Beast", "Cosmos Whale",
   "Time Wraith", "Temporal Serpent", "Chrono Drake", "Aeon Serpent", "Infinity Worm", "Void Horror", "Eternal Phoenix", "Immortal Serpent", "Undying Dragon", "Endless Golem",
-  "Mechanical Wyrm", "Runesteel Dragon", "Technomancer’s Construct", "Cybernetic Chimera", "Mech Serpent", "Nano Swarm", "Digital Ghost", "AI Construct", "Holographic Beast", "Virtual Dragon"
+  "Mechanical Wyrm", "Runesteel Dragon", "Technomancer’s Construct", "Cybernetic Chimera", "Mech Serpent", "Nano Swarm", "Digital Ghost", "AI Construct", "Holographic Beast", "Virtual Dragon",
 "Bone Colossus", "Skull Serpent", "Wraith Dragon", "Crypt Golem", "Necrotic Phoenix", "Phantom Wolf", "Spectral Lion", "Ethereal Stag", "Spirit Dragon", "Shadow Serpent",
   "Dark Drake", "Abyss Worm", "Nether Wraith", "Umbral Horror", "Oblivion Spawn", "Dusk Wolf", "Midnight Serpent", "Cloaked Phantom", "Nightshade Beast", "Ebon Drake",
   "Ash Wraith", "Cinder Drake", "Flame Elemental", "Infernal Phoenix", "Lava Serpent", "Pyre Golem", "Burning Horror", "Molten Colossus", "Hellfire Wyrm", "Demon Drake",
@@ -255,7 +255,7 @@ environment: [
   "Black Hole Drake", "Nebula Horror", "Supernova Serpent", "Quasar Beast", "Wormhole Horror", "Solar Flare Dragon", "Comet Chimera", "Dark Matter Horror", "Gravity Serpent", "Celestial Horror",
   "Hydra Spawn", "Twin-Headed Serpent", "Three-Headed Dragon", "Multi-Eyed Horror", "Tentacle Serpent", "Winged Worm", "Horned Beast", "Spined Horror", "Armored Drake", "Scaled Serpent",
   "Feathered Serpent", "Plumed Serpent", "Quetzalcoatl", "Jade Dragon", "Serpent God", "Winged Chimera", "Winged Drake", "Aerial Horror", "Sky Phantom", "Cloud Horror",
-  "Sun Serpent", "Moon Serpent", "Star Serpent", "Galaxy Serpent", "Universe Beast", "Creation Horror", "Destruction Serpent", "Life Serpent", "Death Serpent", "Rebirth Phoenix"
+  "Sun Serpent", "Moon Serpent", "Star Serpent", "Galaxy Serpent", "Universe Beast", "Creation Horror", "Destruction Serpent", "Life Serpent", "Death Serpent", "Rebirth Phoenix",
     "Ash Phoenix", "Cinder Serpent", "Inferno Chimera", "Burnt Horror", "Smoldering Wraith", "Lava Colossus", "Magma Serpent", "Scorch Drake", "Ember Beast", "Blazing Horror",
   "Charred Golem", "Pyro Horror", "Volcanic Serpent", "Molten Horror", "Soot Wraith", "Ignition Beast", "Kindling Horror", "Spark Serpent", "Torch Dragon", "Wildfire Beast",
   "Ocean Leviathan", "Tidal Colossus", "Current Serpent", "Deepwater Horror", "Kraken Horror", "Whirlpool Beast", "Maelstrom Drake", "Riptide Horror", "Surge Serpent", "Wave Horror",
