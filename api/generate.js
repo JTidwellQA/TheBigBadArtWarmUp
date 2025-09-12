@@ -76,7 +76,7 @@ export default function handler(req, res) {
       "wide angle", "close-up", "extreme close-up", "low angle", "high angle", "top-down", "over-the-shoulder", "dutch tilt", "zoomed in", "zoomed out",
       "fish-eye", "drone shot", "crane shot", "tracking shot", "first-person view", "third-person", "POV", "static shot", "panning", "slow motion"
     ],
-    franchiseCharacter = Array.from(new Set([
+    franchiseCharacter: [
   "Spider-Man", "Miles Morales", "Superman", "Batman", "Wonder Woman", "The Flash", "Black Panther", "Storm", "Static Shock", "Iron Man",
   "Captain America", "Blade", "Green Lantern (John Stewart)", "Cyborg", "Shuri", "Luke Cage", "Misty Knight", "Falcon", "Ironheart",
   "Blue Beetle", "Nova", "Doctor Doom", "Magneto", "Mystique", "Scarlet Witch", "Vision", "Moon Knight", "Daredevil", "Punisher",
@@ -154,8 +154,7 @@ export default function handler(req, res) {
   "Conan Edogawa", "Ran Mouri", "Kogoro Mouri", "Ai Haibara", "Kaito Kid", "Shinichi Kudo", "Emma", "Ray", "Norman", "Isabella",
   "Meliodas", "Elizabeth Liones", "Ban", "Diane", "King", "Gowther", "Merlin", "Escanor", "Zeldris", "Estarossa",
   "Natsu Dragneel", "Lucy Heartfilia", "Gray Fullbuster", "Erza Scarlet", "Happy", "Wendy Marvell", "Jellal Fernandes", "Laxus Dreyar", "Gajeel Redfox", "Mirajane Strauss",
-  "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira",
-  "Kanao",
+  "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira","Kanao",
     ],
   };
 
