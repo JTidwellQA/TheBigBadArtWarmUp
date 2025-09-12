@@ -155,8 +155,8 @@ export default function handler(req, res) {
   "Meliodas", "Elizabeth Liones", "Ban", "Diane", "King", "Gowther", "Merlin", "Escanor", "Zeldris", "Estarossa",
   "Natsu Dragneel", "Lucy Heartfilia", "Gray Fullbuster", "Erza Scarlet", "Happy", "Wendy Marvell", "Jellal Fernandes", "Laxus Dreyar", "Gajeel Redfox", "Mirajane Strauss",
   "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira",
-  "Kanao
-    ]
+  "Kanao",
+    ]))
   };
 
   const category = req.query.category;
