@@ -78,8 +78,6 @@ window.addEventListener('DOMContentLoaded', () => {
       checkbox.addEventListener("change", buildFinalPrompt);
     }
 
-    let allSelected = false;
-
 let allSelected = true; // ✅ start true because all checkboxes start checked
 
 document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
