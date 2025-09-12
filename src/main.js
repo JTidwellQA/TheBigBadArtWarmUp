@@ -21,7 +21,7 @@ function buildFinalPrompt() {
 }
 
 function capitalize(word) {
-  return word.replace(/([A-Z])/g, ' $1') // Add space for camelCase
+  return word.replace(/([A-Z])/g, ' $1')
              .replace(/^./, str => str.toUpperCase());
 }
 
@@ -60,12 +60,13 @@ function clearAll() {
   categories.forEach(cat => {
     state[cat] = null;
     setResult(cat, "‑");
+    const checkbox = document.getElementById(cat + "Check");
+    if (checkbox) checkbox.checked = false;
   });
   document.getElementById("finalPrompt").textContent = "Your final prompt will appear here.";
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Button listeners
   categories.forEach(cat => {
     const btn = document.getElementById(cat + "Btn");
     if (btn) {
@@ -88,15 +89,16 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelectorAll(".searchBtn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const type = btn.dataset.type;
-    const value = state[type];
-    if (value) {
-      const label = capitalize(type);
-      const searchQuery = `${label}: ${value}`;
-      window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`, "_blank");
-    } else {
-      alert(`Please generate a ${type} first.`);
-    }
+    btn.addEventListener("click", () => {
+      const type = btn.dataset.type;
+      const value = state[type];
+      if (value) {
+        const label = capitalize(type);
+        const searchQuery = `${label}: ${value}`;
+        window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`, "_blank");
+      } else {
+        alert(`Please generate a ${type} first.`);
+      }
+    });
   });
 });
