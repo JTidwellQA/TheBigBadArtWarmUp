@@ -1,6 +1,6 @@
 export default function handler(req, res) {
   const prompts = {
-    animal: [
+    "animal": [
       "wolf", "lion", "tiger", "bear", "fox", "owl", "eagle", "panther", "raven", "bat",
       "deer", "shark", "dolphin", "whale", "cat", "dog", "lizard", "gecko", "spider", "jellyfish",
       "crab", "octopus", "kangaroo", "sloth", "elephant", "giraffe", "penguin", "zebra", "skunk", "raccoon",
@@ -27,7 +27,7 @@ export default function handler(req, res) {
       "koi", "goldfish", "betta", "guppy", "platy", "swordtail", "angelfish", "tetra", "danio", "barb",
       "corydoras", "pleco", "hillstream loach", "mudskipper", "lungfish", "bichir", "knifefish", "glass catfish", "rainbowfish", "butterfly fish"
     ],
-    medium: [
+    "medium": [
       "digital", "ink", "pencil", "charcoal", "watercolor", "acrylic", "oil paint", "vector", "pixel", "marker",
       "chalk", "pastel", "graffiti", "spray paint", "linocut", "woodblock", "collage", "mixed media", "3D model", "papercut",
       "sculpture", "clay", "bronze", "marble", "sand", "snow", "fabric", "embroidery", "needlepoint", "crayon",
@@ -35,14 +35,14 @@ export default function handler(req, res) {
       "quilling", "origami", "crochet", "knit", "drip paint", "splatter", "hyperrealism", "flat design", "line art", "comic style",
       "manga", "anime", "storybook", "expressionist", "cubist", "impressionist", "realism", "surrealism", "steampunk", "cyberpunk"
     ],
-    genre: [
+    "genre": [
       "fantasy", "sci-fi", "horror", "noir", "surreal", "abstract", "post-apocalyptic", "utopian", "dystopian", "space opera",
       "mecha", "bio-punk", "steampunk", "cyberpunk", "urban fantasy", "high fantasy", "low fantasy", "magical realism", "grimdark", "occult",
       "mythology", "fairy tale", "historical fiction", "kaiju", "dreamcore", "weirdcore", "slice of life", "comedy", "dark comedy", "supernatural",
       "ghost story", "gothic", "zombie apocalypse", "creature feature", "silent film", "spy thriller", "romance", "tragedy", "satire", "mockumentary",
       "wild west", "feudal Japan", "modern day", "futuristic", "ancient world", "court drama", "detective noir", "time travel", "parallel world", "cosmic horror"
     ],
-   character: [
+   "character": [
       "knight", "wizard", "witch", "robot", "cyborg", "android", "ghost", "vampire", "werewolf", "druid",
       "ranger", "hunter", "assassin", "thief", "bard", "sorcerer", "necromancer", "shapeshifter", "pirate", "samurai",
       "ninja", "cowboy", "gunslinger", "space marine", "alien", "mutant", "superhero", "villain", "healer", "alchemist",
@@ -56,27 +56,27 @@ export default function handler(req, res) {
       "crystal golem", "eldritch scholar", "fog dancer", "phantom thief", "insect queen", "corpse puppeteer", "witch hunter", "ghoul", "sandwalker", "sky pirate",
       "flesh crafter", "shadow forger", "bounty priest", "alien diplomat", "biohacker", "solar paladin", "moon priestess", "toxin alchemist", "storm shaman", "relic hunter"
     ],
-    lighting: [
+    "lighting": [
       "harsh spotlight", "neon glow", "warm sunset", "cool moonlight", "studio lighting", "candlelight", "backlit", "rim light", "top-down", "underlit",
       "silhouetted", "glowing outline", "overexposed", "no lighting", "dramatic contrast", "foggy ambiance", "blinding sunlight", "ambient lighting", "low light", "flickering flame"
     ],
-    vibe: [
+    "vibe": [
       "eerie", "peaceful", "chaotic", "dreamy", "surreal", "whimsical", "ominous", "tense", "romantic", "serene",
       "cold", "warm", "nostalgic", "epic", "intimate", "cinematic", "claustrophobic", "open", "spiritual", "punk"
     ],
-    emotion: [
+    "emotion": [
       "anger", "joy", "fear", "sadness", "excitement", "boredom", "awe", "confusion", "hope", "despair",
       "rage", "melancholy", "delight", "shock", "panic", "relief", "determination", "peace", "envy", "pride"
     ],
-    color: [
+    "color": [
       "monochrome", "complementary", "analogous", "neon", "pastel", "vibrant", "earth tones", "grayscale", "primary colors", "cool palette",
       "warm palette", "red dominant", "blue dominant", "green dominant", "purple hues", "orange tones", "black & white", "sepia", "muted colors", "saturated colors"
     ],
-    camera: [
+    "camera": [
       "wide angle", "close-up", "extreme close-up", "low angle", "high angle", "top-down", "over-the-shoulder", "dutch tilt", "zoomed in", "zoomed out",
       "fish-eye", "drone shot", "crane shot", "tracking shot", "first-person view", "third-person", "POV", "static shot", "panning", "slow motion"
     ],
-    franchiseCharacter: [
+    "franchiseCharacter": [
     "Spider-Man", "Miles Morales", "Superman", "Batman", "Wonder Woman", "The Flash", "Black Panther", "Storm", "Static Shock", "Iron Man",
     "Captain America", "Blade", "Green Lantern (John Stewart)", "Cyborg", "Shuri", "Luke Cage", "Misty Knight", "Falcon", "Ironheart",
     "Blue Beetle", "Nova", "Doctor Doom", "Magneto", "Mystique", "Scarlet Witch", "Vision", "Moon Knight", "Daredevil", "Punisher",
@@ -156,7 +156,7 @@ export default function handler(req, res) {
     "Natsu Dragneel", "Lucy Heartfilia", "Gray Fullbuster", "Erza Scarlet", "Happy", "Wendy Marvell", "Jellal Fernandes", "Laxus Dreyar", "Gajeel Redfox", "Mirajane Strauss",
     "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira","Kanao"
     ],
-    environment: [
+    "environment": [
     "Ancient forest", "Dense jungle", "Bamboo grove", "Haunted woods", "Misty swamp", "Mangrove forest", "Savanna plains", "Rolling grasslands", "Steppe", "Prairie",
     "Rocky canyon", "Grand canyon", "Cliffside coast", "Mountain peak", "Snowy mountains", "Volcanic mountain", "Crater rim", "Desert canyon", "Mesa desert", "Butte valley",
     "Sandy desert", "Dune sea", "Oasis", "Salt flats", "Badlands", "Scorched desert", "Crystal desert", "Ash desert", "Rocky wasteland", "Fossil desert",
