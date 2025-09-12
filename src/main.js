@@ -88,14 +88,15 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelectorAll(".searchBtn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const type = btn.dataset.type;
-      const value = state[type];
-      if (value) {
-        window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(value)}`, "_blank");
-      } else {
-        alert(`Please generate a ${type} first.`);
-      }
-    });
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.type;
+    const value = state[type];
+    if (value) {
+      const label = capitalize(type);
+      const searchQuery = `${label}: ${value}`;
+      window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`, "_blank");
+    } else {
+      alert(`Please generate a ${type} first.`);
+    }
   });
 });
