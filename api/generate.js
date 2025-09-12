@@ -48,7 +48,7 @@ export default function handler(req, res) {
       "ninja", "cowboy", "gunslinger", "space marine", "alien", "mutant", "superhero", "villain", "healer", "alchemist",
       "scientist", "engineer", "hacker", "spy", "detective", "priest", "monk", "cultist", "prince", "princess",
       "king", "queen", "emperor", "empress", "gladiator", "brawler", "swordsman", "archer", "sniper", "telepath",
-      "fire mage", "ice mage", "battle nun", "spirit medium", "dreamwalker", "clone", "lucid dreamer", "android monk", "puppetmaster", "trickster"
+      "fire mage", "ice mage", "battle nun", "spirit medium", "dreamwalker", "clone", "lucid dreamer", "android monk", "puppetmaster", "trickster",
       "time traveler", "beast tamer", "blood mage", "plague doctor", "rune carver", "bone collector", "demon slayer", "soul reaper", "revolutionary", "oracle",
       "stormcaller", "chrono-mancer", "memory thief", "mirror walker", "dimension hopper", "cyber priest", "data ghost", "astral knight", "starborn child", "void walker",
       "junkyard mechanic", "hologram assassin", "mutant prophet", "feral child", "dreamsmith", "sand mage", "cursed poet", "street magician", "vampire hunter", "zombie warlord",
