@@ -77,6 +77,19 @@ window.addEventListener('DOMContentLoaded', () => {
     if (checkbox) {
       checkbox.addEventListener("change", buildFinalPrompt);
     }
+
+    let allSelected = false;
+
+document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
+  allSelected = !allSelected;
+  categories.forEach(cat => {
+    const checkbox = document.getElementById(cat + "Check");
+    if (checkbox) checkbox.checked = allSelected;
+  });
+
+  document.getElementById("toggleSelectAllBtn").textContent = allSelected ? "Unselect All" : "Select All";
+  buildFinalPrompt();
+});
   });
 
   document.getElementById("generateAllBtn").addEventListener("click", handleGenerateAll);
