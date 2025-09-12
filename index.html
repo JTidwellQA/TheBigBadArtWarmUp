@@ -1,6 +1,6 @@
-const categories = [
-  "animal", "medium", "genre", "character", "creature", "environment", 
-  "lighting", "vibe", "emotion", "color", "camera", "franchiseCharacter"
+maybe too much was changed about this - Update this - const categories = [
+  "animal", "medium", "genre", "character", "lighting",
+  "vibe", "emotion", "color", "camera", "franchiseCharacter"
 ];
 
 const state = {};
@@ -59,7 +59,7 @@ async function handleGenerateAll() {
 function clearAll() {
   categories.forEach(cat => {
     state[cat] = null;
-    setResult(cat, "-");
+    setResult(cat, "‑");
     const checkbox = document.getElementById(cat + "Check");
     if (checkbox) checkbox.checked = false;
   });
@@ -77,25 +77,25 @@ window.addEventListener('DOMContentLoaded', () => {
     if (checkbox) {
       checkbox.addEventListener("change", buildFinalPrompt);
     }
+
+let allSelected = true; // ✅ start true because all checkboxes start checked
+
+document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
+  allSelected = !allSelected;
+
+  categories.forEach(cat => {
+    const checkbox = document.getElementById(cat + "Check");
+    if (checkbox) {
+      checkbox.checked = allSelected;
+    }
   });
 
-  let allSelected = true; // ✅ start true because all checkboxes start checked
+  // Update button text
+  document.getElementById("toggleSelectAllBtn").textContent = allSelected ? "Unselect All" : "Select All";
 
-  document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
-    allSelected = !allSelected;
-
-    categories.forEach(cat => {
-      const checkbox = document.getElementById(cat + "Check");
-      if (checkbox) {
-        checkbox.checked = allSelected;
-      }
-    });
-
-    // Update button text
-    document.getElementById("toggleSelectAllBtn").textContent = allSelected ? "Unselect All" : "Select All";
-
-    // Update final prompt immediately
-    buildFinalPrompt();
+  // Update final prompt immediately
+  buildFinalPrompt();
+});
   });
 
   document.getElementById("generateAllBtn").addEventListener("click", handleGenerateAll);
