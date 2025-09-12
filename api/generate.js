@@ -286,7 +286,7 @@ environment: [
   "Supernova Horror", "Quasar Horror", "Solar Flare Horror", "Comet Horror", "Dark Matter Horror", "Gravity Horror", "Celestial Horror", "Stellar Horror", "Nebula Horror", "Universe Horror",
   "Hydra Horror", "Twin-Headed Horror", "Three-Headed Horror", "Multi-Eyed Horror", "Tentacle Horror", "Winged Horror", "Horned Horror", "Spined Horror", "Armored Horror", "Scaled Horror",
   "Feathered Horror", "Plumed Horror", "Quetzal Horror", "Serpent God Horror", "Winged Chimera", "Winged Drake", "Flying Horror", "Soaring Horror", "Aerial Horror", "Sky Horror",
-  "Sun Horror", "Moon Horror", "Star Horror", "Galaxy Horror", "Universe Horror", "Creation Horror", "Destruction Horror", "Life Horror", "Death Horror", "Rebirth Horror"
+  "Sun Horror", "Moon Horror", "Star Horror", "Galaxy Horror", "Universe Horror", "Creation Horror", "Destruction Horror", "Life Horror", "Death Horror", "Rebirth Horror",
   "Ashen Wyrm", "Charcoal Horror", "Cinder Drake", "Infernal Phoenix", "Burning Colossus", "Hell Serpent", "Ash Fiend", "Scorching Wraith", "Blister Beast", "Charred Titan",
   "Molten Chimera", "Volcano Horror", "Pyre Drake", "Soot Serpent", "Ember Titan", "Inferno Horror", "Flare Beast", "Torch Horror", "Wildfire Titan", "Blaze Horror",
   "Abyss Horror", "Deepsea Horror", "Tide Horror", "Trench Colossus", "Mariana Horror", "Kraken Titan", "Leviathan Horror", "Surge Colossus", "Maelstrom Horror", "Nautical Horror",
