@@ -312,7 +312,7 @@ export default function handler(req, res) {
     "Feathered Titan", "Plumed Horror", "Winged Colossus", "Soaring Horror", "Aerial Colossus", "Flying Horror", "Sky Titan", "Storm Horror", "Sun Colossus", "Moon Horror",
     "Creation Titan", "Destruction Horror", "Life Titan", "Death Horror", "Rebirth Colossus", "Cycle Horror", "Origin Colossus", "End Horror", "Eternal Titan", "Immortal Horror"
   
-    ],
+    ]
   };
 
   const category = req.query.category;
