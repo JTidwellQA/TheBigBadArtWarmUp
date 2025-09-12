@@ -317,11 +317,11 @@ export default function handler(req, res) {
 
   const category = req.query.category;
 
-  if (!category || !prompts[category]) {
-    res.status(400).json({ error: "Invalid category" });
-    return;
-  }
+if (!category || !prompts[category]) {
+ res.status(400).json({ error: "Invalid category" });
+ return;
+}
 
-  const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
-  res.status(200).json({ prompt: rand });
+const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
+res.status(200).json({ prompt: rand });
 }
