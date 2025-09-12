@@ -154,7 +154,7 @@ export default function handler(req, res) {
   "Conan Edogawa", "Ran Mouri", "Kogoro Mouri", "Ai Haibara", "Kaito Kid", "Shinichi Kudo", "Emma", "Ray", "Norman", "Isabella",
   "Meliodas", "Elizabeth Liones", "Ban", "Diane", "King", "Gowther", "Merlin", "Escanor", "Zeldris", "Estarossa",
   "Natsu Dragneel", "Lucy Heartfilia", "Gray Fullbuster", "Erza Scarlet", "Happy", "Wendy Marvell", "Jellal Fernandes", "Laxus Dreyar", "Gajeel Redfox", "Mirajane Strauss",
-  "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira","Kanao",
+  "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira","Kanao"
     ],
 environment: [
   "Ancient forest", "Dense jungle", "Bamboo grove", "Haunted woods", "Misty swamp", "Mangrove forest", "Savanna plains", "Rolling grasslands", "Steppe", "Prairie",
