@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+
   const prompts = {
     animal: [
       "wolf", "lion", "tiger", "bear", "fox", "owl", "eagle", "panther", "raven", "bat",
