@@ -45,9 +45,19 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#results {
-  max-width: 800px;
+/* 🔥 New Layout Wrapper */
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Left Column - Results */
+#results {
+  flex: 1 1 60%;
+  min-width: 300px;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
@@ -63,11 +73,16 @@ h1 {
   color: #6a5acd;
 }
 
+/* Right Column - Final Prompt */
 #finalPrompt {
-  margin-top: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
+  flex: 1 1 35%;
+  min-width: 250px;
+  margin: 0; /* reset old top margin */
+  padding: 1.5rem;
+  border-radius: 12px;
   background: #f9f9f9;
   border: 1px solid #eee;
   font-weight: bold;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
