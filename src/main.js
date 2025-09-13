@@ -6,15 +6,6 @@ const categories = [
 const state = {};
 categories.forEach(cat => state[cat] = null);
 
-document.body.style.background = "url('/bg-texture2.jpg') repeat top left fixed";
-document.body.style.backgroundSize = "250px 250px";
-
-document.body.style.backgroundImage = `url(${randomBg})`;
-document.body.style.backgroundRepeat = "repeat";
-document.body.style.backgroundAttachment = "fixed";
-document.body.style.backgroundPosition = "top left";
-document.body.style.backgroundSize = "400px 400px"; // adjust tiling size
-
 function setResult(category, value) {
   document.getElementById(category + "Result").textContent = value;
 }
@@ -88,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  let allSelected = true; // ✅ start true because all checkboxes start checked
+  let allSelected = true;
 
   document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
     allSelected = !allSelected;
@@ -100,10 +91,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Update button text
     document.getElementById("toggleSelectAllBtn").textContent = allSelected ? "Unselect All" : "Select All";
 
-    // Update final prompt immediately
     buildFinalPrompt();
   });
 
