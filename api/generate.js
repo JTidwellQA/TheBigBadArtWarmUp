@@ -315,27 +315,13 @@
     
   };
 
-function handler(req, res) {
-  try {
-    const { category } = req.query;
+const category = req.query.category;
 
-    if (!category || !prompts[category]) {
-      return res.status(400).json({ error: "Invalid category" });
-    }
-
-    const rand = prompts[category][
-      Math.floor(Math.random() * prompts[category].length)
-    ];
-
-    return res.status(200).json({ prompt: rand });
-  } catch (err) {
-    console.error("API ERROR:", err);
-    return res.status(500).json({ error: "Internal Server Error", details: err.message });
+  if (!category || !prompts[category]) {
+    res.status(400).json({ error: "Invalid category" });
+    return;
   }
-}
 
-module.exports = handler;
-
-if (require.main === module) {
-  console.log("Test run:", prompts.animal[Math.floor(Math.random() * prompts.animal.length)]);
+  const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
+  res.status(200).json({ prompt: rand });
 }
