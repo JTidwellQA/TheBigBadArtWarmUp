@@ -24,7 +24,7 @@
       "wrasse", "goby", "blenny", "jawfish", "eel catfish", "catshark", "bamboo shark", "nurse shark", "thresher shark", "mako shark",
       "hammerhead shark", "reef shark", "tigerfish", "goliath tigerfish", "arapaima", "electric eel", "pacu", "oscar", "discus", "clown loach",
       "koi", "goldfish", "betta", "guppy", "platy", "swordtail", "angelfish", "tetra", "danio", "barb",
-      "corydoras", "pleco", "hillstream loach", "mudskipper", "lungfish", "bichir", "knifefish", "glass catfish", "rainbowfish", "butterfly fish",
+      "corydoras", "pleco", "hillstream loach", "mudskipper", "lungfish", "bichir", "knifefish", "glass catfish", "rainbowfish", "butterfly fish"
     ],
     medium: [
       "digital", "ink", "pencil", "charcoal", "watercolor", "acrylic", "oil paint", "vector", "pixel", "marker",
@@ -32,14 +32,14 @@
       "sculpture", "clay", "bronze", "marble", "sand", "snow", "fabric", "embroidery", "needlepoint", "crayon",
       "calligraphy", "tattoo flash", "body paint", "airbrush", "stop motion", "scratchboard", "stained glass", "tempera", "encaustic", "foil",
       "quilling", "origami", "crochet", "knit", "drip paint", "splatter", "hyperrealism", "flat design", "line art", "comic style",
-      "manga", "anime", "storybook", "expressionist", "cubist", "impressionist", "realism", "surrealism", "steampunk", "cyberpunk",
+      "manga", "anime", "storybook", "expressionist", "cubist", "impressionist", "realism", "surrealism", "steampunk", "cyberpunk"
     ],
     genre: [
       "fantasy", "sci-fi", "horror", "noir", "surreal", "abstract", "post-apocalyptic", "utopian", "dystopian", "space opera",
       "mecha", "bio-punk", "steampunk", "cyberpunk", "urban fantasy", "high fantasy", "low fantasy", "magical realism", "grimdark", "occult",
       "mythology", "fairy tale", "historical fiction", "kaiju", "dreamcore", "weirdcore", "slice of life", "comedy", "dark comedy", "supernatural",
       "ghost story", "gothic", "zombie apocalypse", "creature feature", "silent film", "spy thriller", "romance", "tragedy", "satire", "mockumentary",
-      "wild west", "feudal Japan", "modern day", "futuristic", "ancient world", "court drama", "detective noir", "time travel", "parallel world", "cosmic horror",
+      "wild west", "feudal Japan", "modern day", "futuristic", "ancient world", "court drama", "detective noir", "time travel", "parallel world", "cosmic horror"
     ],
    character: [
       "knight", "wizard", "witch", "robot", "cyborg", "android", "ghost", "vampire", "werewolf", "druid",
@@ -53,27 +53,27 @@
       "junkyard mechanic", "hologram assassin", "mutant prophet", "feral child", "dreamsmith", "sand mage", "cursed poet", "street magician", "vampire hunter", "zombie warlord",
       "wasteland king", "gravity shifter", "nanite swarmlord", "plasma sniper", "energy bender", "cosmic monk", "neon drifter", "symbiote host", "ancient automaton", "arcane engineer",
       "crystal golem", "eldritch scholar", "fog dancer", "phantom thief", "insect queen", "corpse puppeteer", "witch hunter", "ghoul", "sandwalker", "sky pirate",
-      "flesh crafter", "shadow forger", "bounty priest", "alien diplomat", "biohacker", "solar paladin", "moon priestess", "toxin alchemist", "storm shaman", "relic hunter",
+      "flesh crafter", "shadow forger", "bounty priest", "alien diplomat", "biohacker", "solar paladin", "moon priestess", "toxin alchemist", "storm shaman", "relic hunter"
     ],
     lighting: [
       "harsh spotlight", "neon glow", "warm sunset", "cool moonlight", "studio lighting", "candlelight", "backlit", "rim light", "top-down", "underlit",
-      "silhouetted", "glowing outline", "overexposed", "no lighting", "dramatic contrast", "foggy ambiance", "blinding sunlight", "ambient lighting", "low light", "flickering flame",
+      "silhouetted", "glowing outline", "overexposed", "no lighting", "dramatic contrast", "foggy ambiance", "blinding sunlight", "ambient lighting", "low light", "flickering flame"
     ],
     vibe: [
       "eerie", "peaceful", "chaotic", "dreamy", "surreal", "whimsical", "ominous", "tense", "romantic", "serene",
-      "cold", "warm", "nostalgic", "epic", "intimate", "cinematic", "claustrophobic", "open", "spiritual", "punk",
+      "cold", "warm", "nostalgic", "epic", "intimate", "cinematic", "claustrophobic", "open", "spiritual", "punk"
     ],
     emotion: [
       "anger", "joy", "fear", "sadness", "excitement", "boredom", "awe", "confusion", "hope", "despair",
-      "rage", "melancholy", "delight", "shock", "panic", "relief", "determination", "peace", "envy", "pride",
+      "rage", "melancholy", "delight", "shock", "panic", "relief", "determination", "peace", "envy", "pride"
     ],
     color: [
       "monochrome", "complementary", "analogous", "neon", "pastel", "vibrant", "earth tones", "grayscale", "primary colors", "cool palette",
-      "warm palette", "red dominant", "blue dominant", "green dominant", "purple hues", "orange tones", "black & white", "sepia", "muted colors", "saturated colors",
+      "warm palette", "red dominant", "blue dominant", "green dominant", "purple hues", "orange tones", "black & white", "sepia", "muted colors", "saturated colors"
     ],
     camera: [
       "wide angle", "close-up", "extreme close-up", "low angle", "high angle", "top-down", "over-the-shoulder", "dutch tilt", "zoomed in", "zoomed out",
-      "fish-eye", "drone shot", "crane shot", "tracking shot", "first-person view", "third-person", "POV", "static shot", "panning", "slow motion",
+      "fish-eye", "drone shot", "crane shot", "tracking shot", "first-person view", "third-person", "POV", "static shot", "panning", "slow motion"
     ],
     franchiseCharacter: [
     "Spider-Man", "Miles Morales", "Superman", "Batman", "Wonder Woman", "The Flash", "Black Panther", "Storm", "Static Shock", "Iron Man",
@@ -153,7 +153,7 @@
     "Conan Edogawa", "Ran Mouri", "Kogoro Mouri", "Ai Haibara", "Kaito Kid", "Shinichi Kudo", "Emma", "Ray", "Norman", "Isabella",
     "Meliodas", "Elizabeth Liones", "Ban", "Diane", "King", "Gowther", "Merlin", "Escanor", "Zeldris", "Estarossa",
     "Natsu Dragneel", "Lucy Heartfilia", "Gray Fullbuster", "Erza Scarlet", "Happy", "Wendy Marvell", "Jellal Fernandes", "Laxus Dreyar", "Gajeel Redfox", "Mirajane Strauss",
-    "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira","Kanao",
+    "Rin Okumura", "Yukio Okumura", "Shura Kirigakure", "Shiemi Moriyama", "Mephisto Pheles", "Amaimon", "Zenitsu Agatsuma", "Inosuke Hashibira","Kanao"
     ],
     environment: [
   "Ancient forest", "Dense jungle", "Bamboo grove", "Haunted woods", "Misty swamp", "Mangrove forest", "Savanna plains", "Rolling grasslands", "Steppe", "Prairie",
@@ -184,7 +184,7 @@
   "Volcanic temple", "Ashen ziggurat", "Fire giant fortress", "Molten citadel", "Infernal altar", "Lava throne room", "Burning cathedral", "Obsidian spire", "Hell gate", "Demon pit",
   "Ocean abyss", "Deep trench", "Sunken reef", "Undersea palace", "Coral kingdom", "Seaweed forest", "Shark-infested waters", "Whale graveyard", "Sunken temple", "Abyssal vents",
   "Urban rooftop", "City park", "Subway tunnels", "Rooftop garden", "Fountain plaza", "Shopping district", "Tech market", "Corporate skyscraper", "Neon freeway", "Hologram square",
-  "Wilderness cabin", "Hunting lodge", "Mountain trail", "River crossing", "Forest camp", "Desert campfire", "Nomad tent", "Oasis encampment", "Snowy cabin", "Fishing hut",
+  "Wilderness cabin", "Hunting lodge", "Mountain trail", "River crossing", "Forest camp", "Desert campfire", "Nomad tent", "Oasis encampment", "Snowy cabin", "Fishing hut"
     ],
     creature: [
     "Dragon", "Wyvern", "Hydra", "Griffin", "Phoenix", "Basilisk", "Cockatrice", "Chimera", "Manticore", "Sphinx",
@@ -309,13 +309,13 @@
     "Martian Colossus", "Alien Horror", "Extraterrestrial Titan", "Space Horror", "Cosmic Colossus", "Planet Horror", "Stellar Colossus", "Asteroid Horror", "Comet Colossus", "Galaxy Horror",
     "Hydra Titan", "Twin-Headed Horror", "Three-Headed Titan", "Multi-Eyed Horror", "Tentacle Titan", "Winged Horror", "Horned Titan", "Spined Horror", "Armored Titan", "Scaled Horror",
     "Feathered Titan", "Plumed Horror", "Winged Colossus", "Soaring Horror", "Aerial Colossus", "Flying Horror", "Sky Titan", "Storm Horror", "Sun Colossus", "Moon Horror",
-    "Creation Titan", "Destruction Horror", "Life Titan", "Death Horror", "Rebirth Colossus", "Cycle Horror", "Origin Colossus", "End Horror", "Eternal Titan", "Immortal Horror",
+    "Creation Titan", "Destruction Horror", "Life Titan", "Death Horror", "Rebirth Colossus", "Cycle Horror", "Origin Colossus", "End Horror", "Eternal Titan", "Immortal Horror"
   
     ]
     
   };
 
-  export default function handler(req, res) {
+ export default function handler(req, res) {
   try {
     const { category } = req.query;
 
@@ -323,7 +323,10 @@
       return res.status(400).json({ error: "Invalid category" });
     }
 
-    const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
+    const rand = prompts[category][
+      Math.floor(Math.random() * prompts[category].length)
+    ];
+
     return res.status(200).json({ prompt: rand });
   } catch (err) {
     console.error("API ERROR:", err);
