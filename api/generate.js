@@ -1,4 +1,8 @@
-export default function handler(req, res) {
+
+export default async function handler(req) {
+  const url = new URL(req.url);
+  const category = url.searchParams.get("category");
+  
   const prompts = {
     animal: [
       "wolf", "lion", "tiger", "bear", "fox", "owl", "eagle", "panther", "raven", "bat",
@@ -175,16 +179,21 @@ export default function handler(req, res) {
       "Scheherazade", "King Midas", "The Golden Touch", "Robin Hood", "Maid Marian", "Friar Tuck", "Little John",
       "Merlin", "King Arthur", "Morgana Le Fay", "Guinevere", "The Lady of the Lake"
 
-    ]
+    ],
   };
 
-  const category = req.query.category;
-
-  if (!category || !prompts[category]) {
-    res.status(400).json({ error: "Invalid category" });
-    return;
+ if (!category || !prompts[category]) {
+    return new Response(
+      JSON.stringify({ error: "Invalid category", category }),
+      { status: 400, headers: { "Content-Type": "application/json" } }
+    );
   }
 
-  const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
-  res.status(200).json({ prompt: rand });
+  const rand =
+    prompts[category][Math.floor(Math.random() * prompts[category].length)];
+
+  return new Response(
+    JSON.stringify({ prompt: rand }),
+    { status: 200, headers: { "Content-Type": "application/json" } }
+  );
 }
