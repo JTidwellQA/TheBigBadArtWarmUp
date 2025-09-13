@@ -104,7 +104,7 @@ export default async function handler(req) {
       "Ghost Rider (Johnny Blaze)", "Ghost Rider (Robbie Reyes)", "Morbius", "Man-Thing", "Werewolf by Night", "Elsa Bloodstone", "Howard the Duck", "Moon-Boy", "Devil Dinosaur",
       "Saitama", "Genos", "Tatsumaki", "King", "Fubuki", "Speed-o'-Sound Sonic", "Mumen Rider", "Garou", "Bang", "Atomic Samurai",
       "Kenshin Himura", "Sanosuke Sagara", "Misao Makimachi", "Shishio Makoto", "Yukishiro Enishi", "Edward Elric", "Alphonse Elric", "Roy Mustang", "Riza Hawkeye", "Scar",
-      "Gintoki Sakata", "Kagura", "Shinpachi Shimura", "Hijikata Toshiro", "Okita Sougo", "Lelouch Lamperouge", "Suzaku Kururugi", "C.C.", "Kallen Stadtfeld", "Jeremiah Gottwald"
+      "Gintoki Sakata", "Kagura", "Shinpachi Shimura", "Hijikata Toshiro", "Okita Sougo", "Lelouch Lamperouge", "Suzaku Kururugi", "C.C.", "Kallen Stadtfeld", "Jeremiah Gottwald",
       "Joel Miller", "Ellie Williams", "Abby Anderson", "Tommy Miller", "Dina", "Lev", "Jesse", "Marlene", "Tess", "Sarah Miller",
       "Kratos", "Atreus", "Zeus (God of War)", "Baldur", "Freya", "Thor (God of War)", "Odin (God of War)", "Heimdall", "Faye", "Sigrun",
       "Link", "Zelda", "Ganondorf", "Midna", "Impa", "Tingle", "Skull Kid", "Revali", "Daruk", "Mipha",
@@ -127,7 +127,7 @@ export default async function handler(req) {
       "Light Yagami", "L", "Ryuk", "Misa Amane", "Near", "Mello", "Watari", "Soichiro Yagami", "Rem", "Teru Mikami",
       "Kaneki Ken", "Touka Kirishima", "Rize Kamishiro", "Amon Koutarou", "Juuzou Suzuya", "Shuu Tsukiyama", "Uta", "Yoshimura", "Hinami Fueguchi", "Arima Kishou",
       "Shinichi Izumi", "Migi", "Kana Kimishima", "Satomi Murano", "Hirokawa", "Gotou", "Tamura Reiko", "Urano", "Yamagishi", "Kurumada",
-      "Yuji Itadori", "Megumi Fushiguro", "Nobara Kugisaki", "Satoru Gojo", "Suguru Geto", "Toji Fushiguro", "Kento Nanami", "Mahito", "Choso", "Maki Zenin"
+      "Yuji Itadori", "Megumi Fushiguro", "Nobara Kugisaki", "Satoru Gojo", "Suguru Geto", "Toji Fushiguro", "Kento Nanami", "Mahito", "Choso", "Maki Zenin",
       "Samurai Jack", "Aku", "Dexter", "Dee Dee", "Johnny Bravo", "Courage the Cowardly Dog", "Eustace", "Muriel", "Ed", "Edd",
       "Eddy", "Blossom", "Bubbles", "Buttercup", "Professor Utonium", "Mojo Jojo", "Ben Tennyson", "Gwen Tennyson", "Kevin Levin", "Vilgax",
       "Raven", "Robin", "Beast Boy", "Cyborg", "Starfire", "Slade", "Aqualad", "Terra", "Jinx", "Kid Flash",
@@ -151,7 +151,7 @@ export default async function handler(req) {
       "Buffy Summers", "Willow Rosenberg", "Xander Harris", "Spike", "Angel", "Giles", "Cordelia Chase", "Faith Lehane", "Tara Maclay", "Anya Jenkins",
       "Twilight Sparkle", "Rainbow Dash", "Fluttershy", "Rarity", "Pinkie Pie", "Applejack", "Spike (MLP)", "Starlight Glimmer", "Sunset Shimmer", "Princess Celestia",
       "Optimus Prime", "Megatron", "Bumblebee", "Starscream", "Soundwave", "Ironhide", "Ratchet", "Shockwave", "Grimlock", "Arcee",
-      "Master Chief", "Cortana", "The Arbiter", "Sergeant Johnson", "Captain Keyes", "The Didact", "Atriox", "Escharum", "Lasky", "Blue Team"
+      "Master Chief", "Cortana", "The Arbiter", "Sergeant Johnson", "Captain Keyes", "The Didact", "Atriox", "Escharum", "Lasky", "Blue Team",
       "Light Yagami", "L Lawliet", "Near", "Mello", "Ryuk", "Rem", "Ichigo Momomiya", "Mint Aizawa", "Lettuce Midorikawa", "Pudding Fong",
       "Zakuro Fujiwara", "Ash Ketchum", "Misty", "Brock", "Pikachu", "Team Rocket", "James", "Jessie", "Meowth", "Goh", "Serena",
       "Red (Pokémon)", "Blue (Pokémon)", "Green (Pokémon)", "Silver", "Gold", "Crystal", "May", "Max", "Dawn", "Chloe",
