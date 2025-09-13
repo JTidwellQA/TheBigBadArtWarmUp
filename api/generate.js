@@ -1,7 +1,6 @@
 
-export default async function handler(req) {
-  const url = new URL(req.url);
-  const category = url.searchParams.get("category");
+export default function handler(req, res) {
+ 
   
   const prompts = {
     animal: [
@@ -189,11 +188,13 @@ export default async function handler(req) {
     );
   }
 
-  const rand =
-    prompts[category][Math.floor(Math.random() * prompts[category].length)];
+  const category = req.query.category;
 
-  return new Response(
-    JSON.stringify({ prompt: rand }),
-    { status: 200, headers: { "Content-Type": "application/json" } }
-  );
+  if (!category || !prompts[category]) {
+    res.status(400).json({ error: "Invalid category" });
+    return;
+  }
+
+  const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
+  res.status(200).json({ prompt: rand });
 }
