@@ -1,6 +1,6 @@
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  background: url('/bg-texture1.jpg') repeat top left fixed;
+  background: url('/bg-grid.jpg') repeat top left fixed;
   background-size: 100px 100px;
   margin: 0;
   padding: 2rem;
