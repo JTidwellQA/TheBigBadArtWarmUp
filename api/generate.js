@@ -1,7 +1,5 @@
 
 export default function handler(req, res) {
- 
-  
   const prompts = {
     animal: [
       "wolf", "lion", "tiger", "bear", "fox", "owl", "eagle", "panther", "raven", "bat",
@@ -181,14 +179,7 @@ export default function handler(req, res) {
     ],
   };
 
- if (!category || !prompts[category]) {
-    return new Response(
-      JSON.stringify({ error: "Invalid category", category }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
-    );
-  }
-
-  const category = req.query.category;
+const category = req.query.category;
 
   if (!category || !prompts[category]) {
     res.status(400).json({ error: "Invalid category" });
