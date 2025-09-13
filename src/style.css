@@ -63,14 +63,21 @@ h1 {
 
 /* Right Column - Final Prompt */
 #finalPrompt {
-  flex: 1 1 35%;
-  min-width: 250px;
-  margin: 0; /* reset old top margin */
+  margin-top: 2rem;
   padding: 1.5rem;
-  border-radius: 35px;
+  border-radius: 8px;
   background: #f9f9f9;
   border: 1px solid #eee;
   font-weight: bold;
-  white-space: pre-wrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-size: 1.4rem;   /* 🔥 Bigger font */
+  line-height: 1.8;    /* More readable spacing */
+  color: #111;         /* Darker text for contrast */
+  white-space: pre-wrap; /* Keeps formatting but wraps text */
 }
+
+#output {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box
