@@ -1,7 +1,10 @@
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  background: url('/bg-texture.jpg') no-repeat center center fixed;
-  background-size: 100px 100px; /* adjust tiling size */
+  background-image: url('/bg-texture.jpg');
+  background-repeat: repeat;        /* allow tiling */
+  background-attachment: fixed;     /* stays in place when scrolling */
+  background-position: top left;    /* start from top-left */
+  background-size: 100px 100px;     /* tile size — adjust as needed */
   margin: 0;
   padding: 2rem;
   color: #333;
