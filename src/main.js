@@ -6,6 +6,17 @@ const categories = [
 const state = {};
 categories.forEach(cat => state[cat] = null);
 
+const backgrounds = [
+  '/bg-texture1.jpg',
+  '/bg-texture2.jpg',
+  '/bg-texture3.jpg'
+];
+
+const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+document.body.style.background = `url(${randomBg}) no-repeat center center fixed`;
+document.body.style.backgroundSize = "cover";
+
 function setResult(category, value) {
   document.getElementById(category + "Result").textContent = value;
 }
