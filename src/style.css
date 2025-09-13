@@ -1,7 +1,7 @@
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   background: url('/bg-texture.jpg') no-repeat center center fixed;
-  background-size: 200px 200px; /* adjust tiling size */
+  background-size: 100px 100px; /* adjust tiling size */
   margin: 0;
   padding: 2rem;
   color: #333;
