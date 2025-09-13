@@ -1,35 +1,44 @@
-// api/generate.js
-
 const prompts = {
   animal: ["wolf", "lion", "tiger"],
   medium: ["digital", "ink", "pencil"],
-  // ...rest of your arrays
+  // add other categories here...
 };
 
-export default async function handler(req, res) {
+export default async function handler(req) {
   try {
-    console.log("Incoming request query:", req.query); // 🔍 Debugging
+    console.log("📩 Incoming request:", req.url);
 
-    const { category } = req.query;
+    const url = new URL(req.url);
+    const category = url.searchParams.get("category");
+
+    console.log("👉 Requested category:", category);
 
     if (!category || !prompts[category]) {
-      console.warn("Invalid category requested:", category); // 🔍 Debugging
-      res.status(400).json({ error: "Invalid category", category });
-      return;
+      console.warn("⚠️ Invalid category:", category);
+      return new Response(
+        JSON.stringify({ error: "Invalid category", category }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     const rand =
       prompts[category][Math.floor(Math.random() * prompts[category].length)];
 
-    console.log(`Generated prompt for ${category}:`, rand); // 🔍 Debugging
+    console.log(`✅ Generated prompt for [${category}]:`, rand);
 
-    res.status(200).json({ prompt: rand });
-  } catch (err) {
-    console.error("API ERROR (detailed):", err); // 🔍 Debugging
-    res.status(500).json({
-      error: "Internal Server Error",
-      details: err.message,
-      stack: err.stack, // 🔍 Include stack trace
+    return new Response(JSON.stringify({ prompt: rand }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
     });
+  } catch (err) {
+    console.error("💥 API ERROR:", err);
+    return new Response(
+      JSON.stringify({
+        error: "Internal Server Error",
+        details: err.message,
+        stack: err.stack,
+      }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }
