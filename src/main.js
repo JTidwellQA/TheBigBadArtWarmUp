@@ -6,15 +6,8 @@ const categories = [
 const state = {};
 categories.forEach(cat => state[cat] = null);
 
-const backgrounds = [
-  '/bg-texture1.jpg',
-  '/bg-texture2.jpg',
-  '/bg-texture3.jpg'
-];
-
-
-
-const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+document.body.style.background = "url('/bg-texture2.jpg') repeat top left fixed";
+document.body.style.backgroundSize = "100px 100px";
 
 document.body.style.backgroundImage = `url(${randomBg})`;
 document.body.style.backgroundRepeat = "repeat";
