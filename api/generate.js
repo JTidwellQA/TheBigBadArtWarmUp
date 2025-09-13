@@ -317,12 +317,17 @@ export default function handler(req, res) {
   };
 
   export default function handler(req, res) {
-  const { category } = req.query; // works in pages/api
+  try {
+    const { category } = req.query;
 
-  if (!category || !prompts[category]) {
-    return res.status(400).json({ error: "Invalid category" });
+    if (!category || !prompts[category]) {
+      return res.status(400).json({ error: "Invalid category" });
+    }
+
+    const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
+    return res.status(200).json({ prompt: rand });
+  } catch (err) {
+    console.error("API ERROR:", err);
+    return res.status(500).json({ error: "Internal Server Error", details: err.message });
   }
-
-  const rand = prompts[category][Math.floor(Math.random() * prompts[category].length)];
-  return res.status(200).json({ prompt: rand });
 }
