@@ -12,10 +12,15 @@ const backgrounds = [
   '/bg-texture3.jpg'
 ];
 
+
+
 const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
-document.body.style.background = `url(${randomBg}) no-repeat center center fixed`;
-document.body.style.backgroundSize = "cover";
+document.body.style.backgroundImage = `url(${randomBg})`;
+document.body.style.backgroundRepeat = "repeat";
+document.body.style.backgroundAttachment = "fixed";
+document.body.style.backgroundPosition = "top left";
+document.body.style.backgroundSize = "100px 100px"; // adjust tiling size
 
 function setResult(category, value) {
   document.getElementById(category + "Result").textContent = value;
