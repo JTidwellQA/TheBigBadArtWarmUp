@@ -7,7 +7,7 @@ const state = {};
 categories.forEach(cat => state[cat] = null);
 
 document.body.style.background = "url('/bg-texture2.jpg') repeat top left fixed";
-document.body.style.backgroundSize = "100px 100px";
+document.body.style.backgroundSize = "250px 250px";
 
 document.body.style.backgroundImage = `url(${randomBg})`;
 document.body.style.backgroundRepeat = "repeat";
