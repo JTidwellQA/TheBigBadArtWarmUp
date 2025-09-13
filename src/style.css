@@ -56,11 +56,11 @@ h1 {
 
 /* Left Column - Results */
 #results {
-  flex: 1 1 60%;
+  flex: 1 1 30%;
   min-width: 300px;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
+  border-radius: 35px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -79,7 +79,7 @@ h1 {
   min-width: 250px;
   margin: 0; /* reset old top margin */
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 35px;
   background: #f9f9f9;
   border: 1px solid #eee;
   font-weight: bold;
