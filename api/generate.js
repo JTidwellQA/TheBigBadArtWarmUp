@@ -315,7 +315,7 @@
     
   };
 
- export default function handler(req, res) {
+function handler(req, res) {
   try {
     const { category } = req.query;
 
@@ -332,4 +332,10 @@
     console.error("API ERROR:", err);
     return res.status(500).json({ error: "Internal Server Error", details: err.message });
   }
+}
+
+module.exports = handler;
+
+if (require.main === module) {
+  console.log("Test run:", prompts.animal[Math.floor(Math.random() * prompts.animal.length)]);
 }
