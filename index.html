@@ -27,7 +27,7 @@
     <button id="toggleSelectAllBtn">Unselect All</button>
   </div>
 
-  <!-- 🔥 New wrapper for 2-column layout -->
+  <!-- 🔥 Two-column layout -->
   <div class="main-content">
     <!-- Left Column: Results -->
     <div id="results">
@@ -90,14 +90,13 @@
         <strong>Franchise Character:</strong> <span id="franchiseCharacterResult">-</span>
         <button class="searchBtn" data-type="franchiseCharacter">🔍 Search for Reference</button>
       </p>
-
-      <div>
-        <button id="copyPrompt">📋 Copy Prompt</button>
-      </div>
     </div>
 
-    <!-- Right Column: Final Prompt -->
-    <pre id="finalPrompt">Your final prompt will appear here.</pre>
+    <!-- Right Column: Final Prompt + Copy Button -->
+    <div id="output">
+      <pre id="finalPrompt">Your final prompt will appear here.</pre>
+      <button id="copyPrompt">📋 Copy Prompt</button>
+    </div>
   </div>
 
   <script type="module" src="/src/main.js"></script>
