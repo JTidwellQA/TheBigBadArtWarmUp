@@ -20,7 +20,7 @@ document.body.style.backgroundImage = `url(${randomBg})`;
 document.body.style.backgroundRepeat = "repeat";
 document.body.style.backgroundAttachment = "fixed";
 document.body.style.backgroundPosition = "top left";
-document.body.style.backgroundSize = "100px 100px"; // adjust tiling size
+document.body.style.backgroundSize = "400px 400px"; // adjust tiling size
 
 function setResult(category, value) {
   document.getElementById(category + "Result").textContent = value;
