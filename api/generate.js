@@ -1,26 +1,34 @@
 const prompts = {
-  animal: ["wolf", "lion", "tiger"], // ... rest of your arrays
+  animal: ["wolf", "lion", "tiger"],
   medium: ["digital", "ink", "pencil"],
-  // etc...
+  // ... add the rest of your arrays
 };
 
-export default function handler(req, res) {
+export default async function handler(req) {
   try {
-    const { category } = req.query;
+    const { searchParams } = new URL(req.url);
+    const category = searchParams.get("category");
 
     if (!category || !prompts[category]) {
-      return res.status(400).json({ error: "Invalid category" });
+      return new Response(
+        JSON.stringify({ error: "Invalid category" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     const rand = prompts[category][
       Math.floor(Math.random() * prompts[category].length)
     ];
 
-    return res.status(200).json({ prompt: rand });
+    return new Response(
+      JSON.stringify({ prompt: rand }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
   } catch (err) {
     console.error("API ERROR:", err);
-    return res
-      .status(500)
-      .json({ error: "Internal Server Error", details: err.message });
+    return new Response(
+      JSON.stringify({ error: "Internal Server Error", details: err.message }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }
