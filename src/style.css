@@ -69,7 +69,7 @@ h1 {
 
 /* Left Column - Results */
 #results {
-  flex: 1 1 45%;
+  flex: 1 1 40%;
   min-width: 320px;
   padding: 1.5rem;
   background: #ffffff;
