@@ -1,8 +1,13 @@
 /* === Base Styling === */
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+
   background: url('/bg-grid.jpg') repeat top left fixed;
   background-size: 250px 250px;
+=======
+  background: url('/bg-texture.jpg') no-repeat center center fixed;
+  background-size: cover;
+
   margin: 0;
   padding: 2rem;
   color: #222;
