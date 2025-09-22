@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Big Bad Art Warm-Up</title>
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
-  <h1>The Big Bad Art Warm-Up</h1>
 
+   <h1>The Big Bad Art Warm-Up</h1>
+<p class="description">
+  This is meant to help generate random ideas. You can search individually or generate all. 
+  You can also click the search buttons next to each category to help quickly find a reference.
+
+  I hope this helps on those days you're feeling blocked. - Keep Howling
+</p>
+  
   <div class="button-group">
     <button id="animalBtn">Generate Animal</button>
     <button id="mediumBtn">Generate Medium</button>
@@ -27,73 +34,77 @@
     <button id="toggleSelectAllBtn">Unselect All</button>
   </div>
 
-  <div id="results">
-    <p><input type="checkbox" class="include" id="animalCheck" checked> 
-      <strong>Animal:</strong> <span id="animalResult">-</span>
-      <button class="searchBtn" data-type="animal">🔍 Search for Reference</button>
-    </p>
+  <!-- 🔥 Two-column layout -->
+  <div class="main-content">
+    <!-- Left Column: Results -->
+    <div id="results">
+      <p><input type="checkbox" class="include" id="animalCheck" checked> 
+        <strong>Animal:</strong> <span id="animalResult">-</span>
+        <button class="searchBtn" data-type="animal">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="mediumCheck" checked> 
-      <strong>Medium:</strong> <span id="mediumResult">-</span>
-      <button class="searchBtn" data-type="medium">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="mediumCheck" checked> 
+        <strong>Medium:</strong> <span id="mediumResult">-</span>
+        <button class="searchBtn" data-type="medium">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="genreCheck" checked> 
-      <strong>Genre:</strong> <span id="genreResult">-</span>
-      <button class="searchBtn" data-type="genre">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="genreCheck" checked> 
+        <strong>Genre:</strong> <span id="genreResult">-</span>
+        <button class="searchBtn" data-type="genre">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="characterCheck" checked> 
-      <strong>Character:</strong> <span id="characterResult">-</span>
-      <button class="searchBtn" data-type="character">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="characterCheck" checked> 
+        <strong>Character:</strong> <span id="characterResult">-</span>
+        <button class="searchBtn" data-type="character">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="creatureCheck" checked> 
-      <strong>Creature:</strong> <span id="creatureResult">-</span>
-      <button class="searchBtn" data-type="creature">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="creatureCheck" checked> 
+        <strong>Creature:</strong> <span id="creatureResult">-</span>
+        <button class="searchBtn" data-type="creature">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="environmentCheck" checked> 
-      <strong>Environment:</strong> <span id="environmentResult">-</span>
-      <button class="searchBtn" data-type="environment">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="environmentCheck" checked> 
+        <strong>Environment:</strong> <span id="environmentResult">-</span>
+        <button class="searchBtn" data-type="environment">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="lightingCheck" checked> 
-      <strong>Lighting:</strong> <span id="lightingResult">-</span>
-      <button class="searchBtn" data-type="lighting">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="lightingCheck" checked> 
+        <strong>Lighting:</strong> <span id="lightingResult">-</span>
+        <button class="searchBtn" data-type="lighting">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="vibeCheck" checked> 
-      <strong>Vibe:</strong> <span id="vibeResult">-</span>
-      <button class="searchBtn" data-type="vibe">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="vibeCheck" checked> 
+        <strong>Vibe:</strong> <span id="vibeResult">-</span>
+        <button class="searchBtn" data-type="vibe">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="emotionCheck" checked> 
-      <strong>Emotion:</strong> <span id="emotionResult">-</span>
-      <button class="searchBtn" data-type="emotion">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="emotionCheck" checked> 
+        <strong>Emotion:</strong> <span id="emotionResult">-</span>
+        <button class="searchBtn" data-type="emotion">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="colorCheck" checked> 
-      <strong>Color:</strong> <span id="colorResult">-</span>
-      <button class="searchBtn" data-type="color">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="colorCheck" checked> 
+        <strong>Color:</strong> <span id="colorResult">-</span>
+        <button class="searchBtn" data-type="color">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="cameraCheck" checked> 
-      <strong>Camera:</strong> <span id="cameraResult">-</span>
-      <button class="searchBtn" data-type="camera">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="cameraCheck" checked> 
+        <strong>Camera:</strong> <span id="cameraResult">-</span>
+        <button class="searchBtn" data-type="camera">🔍 Search for Reference</button>
+      </p>
 
-    <p><input type="checkbox" class="include" id="franchiseCharacterCheck" checked> 
-      <strong>Franchise Character:</strong> <span id="franchiseCharacterResult">-</span>
-      <button class="searchBtn" data-type="franchiseCharacter">🔍 Search for Reference</button>
-    </p>
+      <p><input type="checkbox" class="include" id="franchiseCharacterCheck" checked> 
+        <strong>Franchise Character:</strong> <span id="franchiseCharacterResult">-</span>
+        <button class="searchBtn" data-type="franchiseCharacter">🔍 Search for Reference</button>
+      </p>
+    </div>
+
+    <!-- Right Column: Final Prompt + Copy Button -->
+    <div id="output">
+      <pre id="finalPrompt">Your final prompt will appear here.</pre>
+      <button id="copyPrompt">📋 Copy Prompt</button>
+    </div>
   </div>
-
-  <div>
-    <button id="copyPrompt">📋 Copy Prompt</button>
-  </div>
-
-  <pre id="finalPrompt">Your final prompt will appear here.</pre>
 
   <script type="module" src="/src/main.js"></script>
 </body>
