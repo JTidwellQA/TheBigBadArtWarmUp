@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  let allSelected = true; // ✅ start true because all checkboxes start checked
+  let allSelected = true;
 
   document.getElementById("toggleSelectAllBtn").addEventListener("click", () => {
     allSelected = !allSelected;
@@ -91,10 +91,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Update button text
     document.getElementById("toggleSelectAllBtn").textContent = allSelected ? "Unselect All" : "Select All";
 
-    // Update final prompt immediately
     buildFinalPrompt();
   });
 
